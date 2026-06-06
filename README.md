@@ -18,6 +18,8 @@ The resulting graph contains **16,178 nodes** and **16,102 relationships** cover
 
 ## 2. Graph model — definition and rationale
 
+![M7U4 graph schema](docs/graph_schema.svg)
+
 The graph schema is designed around four principles drawn directly from the lecture material:
 
 1. **GUID as identity** — every IFC entity that has a `GlobalId` becomes a node keyed by that GUID, enforced by a uniqueness constraint (`element_globalid`). This makes the graph robust to re-loads and aligns with Evelio's statement in Session 1 that "in Neo4j, the GUID will usually become the node identity."
@@ -321,6 +323,7 @@ The Duplex model is *better* than most real-world IFC exports in identity and st
 ```
 m7u4-ifc-graph/
 ├── README.md                           ← this document
+├── LICENSE                             ← MIT
 ├── .env.example                        ← template (real .env is gitignored)
 ├── ifc/
 │   └── Duplex_A_20110907.ifc           ← source model (CC-BY-4.0, buildingSMART)
@@ -333,14 +336,15 @@ m7u4-ifc-graph/
 │   ├── 00_graph_overview.png
 │   ├── 01_spatial_hierarchy.png
 │   └── 02_door_with_properties.png
-└── docs/                               ← supplementary notes
+└── docs/
+    └── graph_schema.svg                ← graph model diagram (embedded in §2)
 ```
 
 ## 7. How to reproduce
 
 ```bash
-git clone <repo>
-cd m7u4-ifc-graph
+git clone https://github.com/markshanehaines-ZIG/m7u4-ifc-graph-duplex.git
+cd m7u4-ifc-graph-duplex
 python -m venv venv
 source venv/Scripts/activate   # Windows Git Bash; use venv/bin/activate on macOS/Linux
 pip install ifcopenshell neo4j pandas python-dotenv jupyter ipykernel
