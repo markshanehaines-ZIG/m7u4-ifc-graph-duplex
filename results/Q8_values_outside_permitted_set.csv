@@ -1,0 +1,63 @@
+ElementGlobalId,IfcClass,ElementName,PropertyName,RawValue,DataType
+1hOSvn6df7F8_7GcBWlRGQ,IfcDoor,M_Single-Flush:1250mm x 2010mm:1250mm x 2010mm:146596,FireRating,Fire Rating,str
+1hOSvn6df7F8_7GcBWlRH8,IfcDoor,M_Single-Flush:1250mm x 2010mm:1250mm x 2010mm:146678,FireRating,Fire Rating,str
+1hOSvn6df7F8_7GcBWlS8Z,IfcDoor,M_Single-Flush:0762 x 2032mm:0762 x 2032mm:150173,FireRating,Fire Rating,str
+1hOSvn6df7F8_7GcBWlS9F,IfcDoor,M_Single-Flush:0762 x 2032mm:0762 x 2032mm:150257,FireRating,Fire Rating,str
+1hOSvn6df7F8_7GcBWlSFK,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:150378,FireRating,Fire Rating,str
+1hOSvn6df7F8_7GcBWlSDm,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:150478,FireRating,Fire Rating,str
+2OBrcmyk58NupXoVOHUuXp,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:159734,FireRating,Fire Rating,str
+2OBrcmyk58NupXoVOHUvVV,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:159834,FireRating,Fire Rating,str
+2OBrcmyk58NupXoVOHUvR4,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:160065,FireRating,Fire Rating,str
+2OBrcmyk58NupXoVOHUvPL,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:160208,FireRating,Fire Rating,str
+1s1jVhK8z0pgKYcr9jt781,IfcDoor,M_Single-Glass 1:0813 x 2420mm:0813 x 2420mm:171853,FireRating,Fire Rating,str
+1s1jVhK8z0pgKYcr9jt7AB,IfcDoor,M_Single-Glass 1:0813 x 2420mm:0813 x 2420mm:171975,FireRating,Fire Rating,str
+1aj$VJZFn2TxepZUBcKp$i,IfcDoor,M_Single-Flush:0762 x 2032mm:0762 x 2032mm:203720,FireRating,Fire Rating,str
+1aj$VJZFn2TxepZUBcKpac,IfcDoor,M_Single-Flush:0762 x 2032mm:0762 x 2032mm:204034,FireRating,Fire Rating,str
+1hOSvn6df7F8_7GcBWlR72,IfcWindow,M_Fixed:4835mm x 2420mm:4835mm x 2420mm:145788,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlR72,IfcWindow,M_Fixed:4835mm x 2420mm:4835mm x 2420mm:145788,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlRBU,IfcWindow,M_Fixed:4835mm x 2420mm:4835mm x 2420mm:146016,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlRBU,IfcWindow,M_Fixed:4835mm x 2420mm:4835mm x 2420mm:146016,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlRLx,IfcWindow,M_Fixed:750mm x 2200mm:750mm x 2200mm:146885,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlRLx,IfcWindow,M_Fixed:750mm x 2200mm:750mm x 2200mm:146885,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlRRL,IfcWindow,M_Fixed:750mm x 2200mm:750mm x 2200mm:147051,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlRRL,IfcWindow,M_Fixed:750mm x 2200mm:750mm x 2200mm:147051,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlSXO,IfcWindow,M_Fixed:2800mm x 2410mm:2800mm x 2410mm:147686,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlSXO,IfcWindow,M_Fixed:2800mm x 2410mm:2800mm x 2410mm:147686,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlSga,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:147994,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlSga,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:147994,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlSp1,IfcWindow,M_Casement:819mm x 759mm:819mm x 759mm:148607,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlSp1,IfcWindow,M_Casement:819mm x 759mm:819mm x 759mm:148607,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlSnC,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:148722,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlSnC,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:148722,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlS_W,IfcWindow,M_Fixed:2800mm x 2410mm:2800mm x 2410mm:149278,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlS_W,IfcWindow,M_Fixed:2800mm x 2410mm:2800mm x 2410mm:149278,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlS2V,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:149537,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlS2V,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:149537,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlS1M,IfcWindow,M_Casement:819mm x 759mm:819mm x 759mm:149736,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlS1M,IfcWindow,M_Casement:819mm x 759mm:819mm x 759mm:149736,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlS4Q,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:149924,FireRating,FireRating,str
+1hOSvn6df7F8_7GcBWlS4Q,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:149924,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4$e,IfcWindow,M_Fixed:2800mm x 2410mm:2800mm x 2410mm:180318,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4$e,IfcWindow,M_Fixed:2800mm x 2410mm:2800mm x 2410mm:180318,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4u1,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:180663,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4u1,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:180663,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4qs,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:180864,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4qs,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:180864,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4oq,IfcWindow,M_Casement:819mm x 759mm:819mm x 759mm:180994,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4oq,IfcWindow,M_Casement:819mm x 759mm:819mm x 759mm:180994,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4pU,IfcWindow,M_Fixed:2800mm x 2410mm:2800mm x 2410mm:181096,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4pU,IfcWindow,M_Fixed:2800mm x 2410mm:2800mm x 2410mm:181096,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4kJ,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:181285,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4kJ,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:181285,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4gQ,IfcWindow,M_Casement:819mm x 759mm:819mm x 759mm:181548,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4gQ,IfcWindow,M_Casement:819mm x 759mm:819mm x 759mm:181548,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4hv,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:181583,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4hv,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:181583,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4aS,IfcWindow,M_Fixed:750mm x 2200mm:750mm x 2200mm:181930,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4aS,IfcWindow,M_Fixed:750mm x 2200mm:750mm x 2200mm:181930,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4ZZ,IfcWindow,M_Fixed:750mm x 2200mm:750mm x 2200mm:182101,FireRating,FireRating,str
+1l0GAJtRTFv8$zmKJOH4ZZ,IfcWindow,M_Fixed:750mm x 2200mm:750mm x 2200mm:182101,FireRating,FireRating,str
+1Eo2$BaHX42AEkDvQQDocD,IfcWindow,M_Skylight:1180 x 1170mm:1180 x 1170mm:185337,FireRating,FireRating,str
+1Eo2$BaHX42AEkDvQQDocD,IfcWindow,M_Skylight:1180 x 1170mm:1180 x 1170mm:185337,FireRating,FireRating,str
+1Eo2$BaHX42AEkDvQQDoy2,IfcWindow,M_Skylight:1180 x 1170mm:1180 x 1170mm:185718,FireRating,FireRating,str
+1Eo2$BaHX42AEkDvQQDoy2,IfcWindow,M_Skylight:1180 x 1170mm:1180 x 1170mm:185718,FireRating,FireRating,str

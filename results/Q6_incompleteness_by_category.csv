@@ -1,0 +1,16 @@
+Category,TotalElements,TotalProperties,EmptyProperties,EmptyRatio
+IfcFurnishingElement,61,3011,122,0.041
+IfcWallStandardCase,56,3344,112,0.033
+IfcWindow,24,1480,50,0.034
+IfcSlab,21,1100,40,0.036
+IfcOpeningElement,50,742,28,0.038
+IfcDoor,14,890,28,0.031
+IfcCovering,13,624,26,0.042
+IfcBeam,8,696,16,0.023
+IfcFooting,7,365,14,0.038
+IfcRailing,4,200,8,0.04
+IfcStair,2,182,4,0.022
+IfcRoof,1,55,2,0.036
+IfcWall,1,63,2,0.032
+IfcMember,4,0,0,0.0
+IfcStairFlight,2,20,0,0.0

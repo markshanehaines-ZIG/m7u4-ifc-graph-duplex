@@ -1,0 +1,9 @@
+Question,Dimension,Issue,Findings
+Q1,Completeness,Elements with no property sets,41
+Q2,Completeness,Doors missing FireRating,0
+Q3,Consistency (spatial),Elements not in any storey,122
+Q4,Completeness (ID),Spaces missing name/number,0
+Q5,Completeness,Properties with empty values,452
+Q6,Completeness (agg.),Incompleteness ranked by category,15 categories ranked
+Q7,Uniqueness,Duplicate GlobalIds | shared Names,0 | 0
+Q8,Validity,Values outside permitted set,62

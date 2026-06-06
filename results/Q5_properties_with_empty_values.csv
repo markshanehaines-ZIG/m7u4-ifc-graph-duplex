@@ -1,0 +1,453 @@
+ElementGlobalId,IfcClass,ElementName,PropertySet,PropertyName,DataType
+2OrWItJ6zAwBNp0OUxK_l8,IfcBeam,M_W-Wide Flange:W310X60:W310X60:207325,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OrWItJ6zAwBNp0OUxK$8W,IfcBeam,M_W-Wide Flange:W410X60:W410X60:208949,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OrWItJ6zAwBNp0OUxK$Bq,IfcBeam,M_W-Wide Flange:W410X60:W410X60:209121,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OrWItJ6zAwBNp0OUxK$CR,IfcBeam,M_W-Wide Flange:W410X60:W410X60:209166,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OrWItJ6zAwBNp0OUxK$Dv,IfcBeam,M_W-Wide Flange:W310X60:W310X60:209260,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OrWItJ6zAwBNp0OUxK$Du,IfcBeam,M_W-Wide Flange:W410X60:W410X60:209261,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OrWItJ6zAwBNp0OUxK$Dx,IfcBeam,M_W-Wide Flange:W410X60:W410X60:209262,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OrWItJ6zAwBNp0OUxK$Dw,IfcBeam,M_W-Wide Flange:W410X60:W410X60:209263,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OrWItJ6zAwBNp0OUxK_l8,IfcBeam,M_W-Wide Flange:W310X60:W310X60:207325,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OrWItJ6zAwBNp0OUxK$8W,IfcBeam,M_W-Wide Flange:W410X60:W410X60:208949,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OrWItJ6zAwBNp0OUxK$Bq,IfcBeam,M_W-Wide Flange:W410X60:W410X60:209121,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OrWItJ6zAwBNp0OUxK$CR,IfcBeam,M_W-Wide Flange:W410X60:W410X60:209166,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OrWItJ6zAwBNp0OUxK$Dv,IfcBeam,M_W-Wide Flange:W310X60:W310X60:209260,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OrWItJ6zAwBNp0OUxK$Du,IfcBeam,M_W-Wide Flange:W410X60:W410X60:209261,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OrWItJ6zAwBNp0OUxK$Dx,IfcBeam,M_W-Wide Flange:W410X60:W410X60:209262,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OrWItJ6zAwBNp0OUxK$Dw,IfcBeam,M_W-Wide Flange:W410X60:W410X60:209263,PSet_Revit_Type_Identity Data,Assembly Description,str
+3bXiCStxP6Fgxdej$yc5T8,IfcCovering,Compound Ceiling:Gypsum Board:187149,PSet_Revit_Type_Identity Data,Assembly Code,str
+3bXiCStxP6Fgxdej$yc503,IfcCovering,Compound Ceiling:Gypsum Board:187462,PSet_Revit_Type_Identity Data,Assembly Code,str
+3bXiCStxP6Fgxdej$yc50B,IfcCovering,Compound Ceiling:Gypsum Board:187470,PSet_Revit_Type_Identity Data,Assembly Code,str
+3bXiCStxP6Fgxdej$yc50U,IfcCovering,Compound Ceiling:Gypsum Board:187483,PSet_Revit_Type_Identity Data,Assembly Code,str
+3bXiCStxP6Fgxdej$yc50n,IfcCovering,Compound Ceiling:Gypsum Board:187508,PSet_Revit_Type_Identity Data,Assembly Code,str
+3bXiCStxP6Fgxdej$yc52o,IfcCovering,Compound Ceiling:Gypsum Board:187639,PSet_Revit_Type_Identity Data,Assembly Code,str
+3bXiCStxP6Fgxdej$yc554,IfcCovering,Compound Ceiling:Gypsum Board:187649,PSet_Revit_Type_Identity Data,Assembly Code,str
+3bXiCStxP6Fgxdej$yc55E,IfcCovering,Compound Ceiling:Gypsum Board:187659,PSet_Revit_Type_Identity Data,Assembly Code,str
+3bXiCStxP6Fgxdej$yc55M,IfcCovering,Compound Ceiling:Gypsum Board:187667,PSet_Revit_Type_Identity Data,Assembly Code,str
+3bXiCStxP6Fgxdej$yc55U,IfcCovering,Compound Ceiling:Gypsum Board:187675,PSet_Revit_Type_Identity Data,Assembly Code,str
+3bXiCStxP6Fgxdej$yc55c,IfcCovering,Compound Ceiling:Gypsum Board:187683,PSet_Revit_Type_Identity Data,Assembly Code,str
+3bXiCStxP6Fgxdej$yc55k,IfcCovering,Compound Ceiling:Gypsum Board:187691,PSet_Revit_Type_Identity Data,Assembly Code,str
+3bXiCStxP6Fgxdej$yc55m,IfcCovering,Compound Ceiling:Gypsum Board:187701,PSet_Revit_Type_Identity Data,Assembly Code,str
+3bXiCStxP6Fgxdej$yc5T8,IfcCovering,Compound Ceiling:Gypsum Board:187149,PSet_Revit_Type_Identity Data,Assembly Description,str
+3bXiCStxP6Fgxdej$yc503,IfcCovering,Compound Ceiling:Gypsum Board:187462,PSet_Revit_Type_Identity Data,Assembly Description,str
+3bXiCStxP6Fgxdej$yc50B,IfcCovering,Compound Ceiling:Gypsum Board:187470,PSet_Revit_Type_Identity Data,Assembly Description,str
+3bXiCStxP6Fgxdej$yc50U,IfcCovering,Compound Ceiling:Gypsum Board:187483,PSet_Revit_Type_Identity Data,Assembly Description,str
+3bXiCStxP6Fgxdej$yc50n,IfcCovering,Compound Ceiling:Gypsum Board:187508,PSet_Revit_Type_Identity Data,Assembly Description,str
+3bXiCStxP6Fgxdej$yc52o,IfcCovering,Compound Ceiling:Gypsum Board:187639,PSet_Revit_Type_Identity Data,Assembly Description,str
+3bXiCStxP6Fgxdej$yc554,IfcCovering,Compound Ceiling:Gypsum Board:187649,PSet_Revit_Type_Identity Data,Assembly Description,str
+3bXiCStxP6Fgxdej$yc55E,IfcCovering,Compound Ceiling:Gypsum Board:187659,PSet_Revit_Type_Identity Data,Assembly Description,str
+3bXiCStxP6Fgxdej$yc55M,IfcCovering,Compound Ceiling:Gypsum Board:187667,PSet_Revit_Type_Identity Data,Assembly Description,str
+3bXiCStxP6Fgxdej$yc55U,IfcCovering,Compound Ceiling:Gypsum Board:187675,PSet_Revit_Type_Identity Data,Assembly Description,str
+3bXiCStxP6Fgxdej$yc55c,IfcCovering,Compound Ceiling:Gypsum Board:187683,PSet_Revit_Type_Identity Data,Assembly Description,str
+3bXiCStxP6Fgxdej$yc55k,IfcCovering,Compound Ceiling:Gypsum Board:187691,PSet_Revit_Type_Identity Data,Assembly Description,str
+3bXiCStxP6Fgxdej$yc55m,IfcCovering,Compound Ceiling:Gypsum Board:187701,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlRGQ,IfcDoor,M_Single-Flush:1250mm x 2010mm:1250mm x 2010mm:146596,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlRH8,IfcDoor,M_Single-Flush:1250mm x 2010mm:1250mm x 2010mm:146678,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlS8Z,IfcDoor,M_Single-Flush:0762 x 2032mm:0762 x 2032mm:150173,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlS9F,IfcDoor,M_Single-Flush:0762 x 2032mm:0762 x 2032mm:150257,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlSFK,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:150378,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlSDm,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:150478,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUuXp,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:159734,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvVV,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:159834,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvR4,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:160065,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvPL,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:160208,PSet_Revit_Type_Identity Data,Assembly Code,str
+1s1jVhK8z0pgKYcr9jt781,IfcDoor,M_Single-Glass 1:0813 x 2420mm:0813 x 2420mm:171853,PSet_Revit_Type_Identity Data,Assembly Code,str
+1s1jVhK8z0pgKYcr9jt7AB,IfcDoor,M_Single-Glass 1:0813 x 2420mm:0813 x 2420mm:171975,PSet_Revit_Type_Identity Data,Assembly Code,str
+1aj$VJZFn2TxepZUBcKp$i,IfcDoor,M_Single-Flush:0762 x 2032mm:0762 x 2032mm:203720,PSet_Revit_Type_Identity Data,Assembly Code,str
+1aj$VJZFn2TxepZUBcKpac,IfcDoor,M_Single-Flush:0762 x 2032mm:0762 x 2032mm:204034,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlRGQ,IfcDoor,M_Single-Flush:1250mm x 2010mm:1250mm x 2010mm:146596,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlRH8,IfcDoor,M_Single-Flush:1250mm x 2010mm:1250mm x 2010mm:146678,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlS8Z,IfcDoor,M_Single-Flush:0762 x 2032mm:0762 x 2032mm:150173,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlS9F,IfcDoor,M_Single-Flush:0762 x 2032mm:0762 x 2032mm:150257,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlSFK,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:150378,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlSDm,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:150478,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUuXp,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:159734,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvVV,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:159834,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvR4,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:160065,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvPL,IfcDoor,M_Single-Flush:0864 x 2032mm:0864 x 2032mm:160208,PSet_Revit_Type_Identity Data,Assembly Description,str
+1s1jVhK8z0pgKYcr9jt781,IfcDoor,M_Single-Glass 1:0813 x 2420mm:0813 x 2420mm:171853,PSet_Revit_Type_Identity Data,Assembly Description,str
+1s1jVhK8z0pgKYcr9jt7AB,IfcDoor,M_Single-Glass 1:0813 x 2420mm:0813 x 2420mm:171975,PSet_Revit_Type_Identity Data,Assembly Description,str
+1aj$VJZFn2TxepZUBcKp$i,IfcDoor,M_Single-Flush:0762 x 2032mm:0762 x 2032mm:203720,PSet_Revit_Type_Identity Data,Assembly Description,str
+1aj$VJZFn2TxepZUBcKpac,IfcDoor,M_Single-Flush:0762 x 2032mm:0762 x 2032mm:204034,PSet_Revit_Type_Identity Data,Assembly Description,str
+0kF45Qs8L9PAM9kmb1lT5d,IfcFooting,Wall Foundation:Bearing Footing - 900 x 300:186596,PSet_Revit_Type_Identity Data,Assembly Code,str
+0kF45Qs8L9PAM9kmb1lT5l,IfcFooting,Wall Foundation:Bearing Footing - 900 x 300:186604,PSet_Revit_Type_Identity Data,Assembly Code,str
+0kF45Qs8L9PAM9kmb1lT5t,IfcFooting,Wall Foundation:Bearing Footing - 900 x 300:186612,PSet_Revit_Type_Identity Data,Assembly Code,str
+0kF45Qs8L9PAM9kmb1lT5$,IfcFooting,Wall Foundation:Bearing Footing - 900 x 300:186620,PSet_Revit_Type_Identity Data,Assembly Code,str
+0kF45Qs8L9PAM9kmb1lT2B,IfcFooting,Wall Foundation:Bearing Footing - 900 x 300:186632,PSet_Revit_Type_Identity Data,Assembly Code,str
+0kF45Qs8L9PAM9kmb1lT2N,IfcFooting,Wall Foundation:Bearing Footing - 900 x 300:186644,PSet_Revit_Type_Identity Data,Assembly Code,str
+0kF45Qs8L9PAM9kmb1lT2Z,IfcFooting,Wall Foundation:Bearing Footing - 900 x 300:186656,PSet_Revit_Type_Identity Data,Assembly Code,str
+0kF45Qs8L9PAM9kmb1lT5d,IfcFooting,Wall Foundation:Bearing Footing - 900 x 300:186596,PSet_Revit_Type_Identity Data,Assembly Description,str
+0kF45Qs8L9PAM9kmb1lT5l,IfcFooting,Wall Foundation:Bearing Footing - 900 x 300:186604,PSet_Revit_Type_Identity Data,Assembly Description,str
+0kF45Qs8L9PAM9kmb1lT5t,IfcFooting,Wall Foundation:Bearing Footing - 900 x 300:186612,PSet_Revit_Type_Identity Data,Assembly Description,str
+0kF45Qs8L9PAM9kmb1lT5$,IfcFooting,Wall Foundation:Bearing Footing - 900 x 300:186620,PSet_Revit_Type_Identity Data,Assembly Description,str
+0kF45Qs8L9PAM9kmb1lT2B,IfcFooting,Wall Foundation:Bearing Footing - 900 x 300:186632,PSet_Revit_Type_Identity Data,Assembly Description,str
+0kF45Qs8L9PAM9kmb1lT2N,IfcFooting,Wall Foundation:Bearing Footing - 900 x 300:186644,PSet_Revit_Type_Identity Data,Assembly Description,str
+0kF45Qs8L9PAM9kmb1lT2Z,IfcFooting,Wall Foundation:Bearing Footing - 900 x 300:186656,PSet_Revit_Type_Identity Data,Assembly Description,str
+0wkEuT1wr1kOyafLY4vyu$,IfcFurnishingElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157200,PSet_Revit_Type_Identity Data,Assembly Code,str
+0wkEuT1wr1kOyafLY4vy_8,IfcFurnishingElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157607,PSet_Revit_Type_Identity Data,Assembly Code,str
+0wkEuT1wr1kOyafLY4vy3H,IfcFurnishingElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157950,PSet_Revit_Type_Identity Data,Assembly Code,str
+0wkEuT1wr1kOyafLY4vy3G,IfcFurnishingElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157951,PSet_Revit_Type_Identity Data,Assembly Code,str
+0wkEuT1wr1kOyafLY4vy4m,IfcFurnishingElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157983,PSet_Revit_Type_Identity Data,Assembly Code,str
+0wkEuT1wr1kOyafLY4vy4F,IfcFurnishingElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157984,PSet_Revit_Type_Identity Data,Assembly Code,str
+0wkEuT1wr1kOyafLY4vy6l,IfcFurnishingElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:158080,PSet_Revit_Type_Identity Data,Assembly Code,str
+0wkEuT1wr1kOyafLY4vy6k,IfcFurnishingElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:158081,PSet_Revit_Type_Identity Data,Assembly Code,str
+0wkEuT1wr1kOyafLY4vyMO,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:159159,PSet_Revit_Type_Identity Data,Assembly Code,str
+0wkEuT1wr1kOyafLY4vyOn,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:159262,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvGQ,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:160671,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvH8,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:160717,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUv88,IfcFurnishingElement,M_Counter Top w Sink Hole:600mm Depth:600mm Depth:161165,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUv3h,IfcFurnishingElement,M_Counter Top:600mm Depth:600mm Depth:161646,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvup,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162230,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvuo,IfcFurnishingElement,M_Counter Top:600mm Depth:600mm Depth:162231,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvs2,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162311,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvsm,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162357,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvtA,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162383,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvqp,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162486,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvqo,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162487,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvqz,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162488,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvqy,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162489,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvq$,IfcFurnishingElement,M_Counter Top w Sink Hole:600mm Depth:600mm Depth:162490,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvq_,IfcFurnishingElement,M_Counter Top:600mm Depth:600mm Depth:162491,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvqu,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162493,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvqx,IfcFurnishingElement,M_Counter Top:600mm Depth:600mm Depth:162494,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvqw,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162495,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvr5,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162496,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUvr4,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162497,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUshs,IfcFurnishingElement,M_Sofa:1830mm:1830mm:167283,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUsc7,IfcFurnishingElement,M_Sofa:1830mm:1830mm:167426,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUsab,IfcFurnishingElement,M_Table-Coffee:0610 x 0610 x 0610mm:0610 x 0610 x 0610mm:167584,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUsbY,IfcFurnishingElement,M_Table-Coffee:0610 x 0610 x 0610mm:0610 x 0610 x 0610mm:167655,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtVQ,IfcFurnishingElement,M_Table-Coffee:0915 x 1830 x 0457mm:0915 x 1830 x 0457mm:168031,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtOy,IfcFurnishingElement,M_Sofa:1830mm:1830mm:168377,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtO$,IfcFurnishingElement,M_Sofa:1830mm:1830mm:168378,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtO_,IfcFurnishingElement,M_Table-Coffee:0610 x 0610 x 0610mm:0610 x 0610 x 0610mm:168379,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtOv,IfcFurnishingElement,M_Table-Coffee:0610 x 0610 x 0610mm:0610 x 0610 x 0610mm:168380,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtOu,IfcFurnishingElement,M_Table-Coffee:0915 x 1830 x 0457mm:0915 x 1830 x 0457mm:168381,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtM4,IfcFurnishingElement,M_Bed-Standard:1525 x 2007mm - Queen:1525 x 2007mm - Queen:168449,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtI8,IfcFurnishingElement,M_Bed-Standard:1981 x 2032mm - King:1981 x 2032mm - King:168717,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtHN,IfcFurnishingElement,M_Bed-Standard:1981 x 2032mm - King:1981 x 2032mm - King:168914,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtEr,IfcFurnishingElement,M_Bed-Standard:1525 x 2007mm - Queen:1525 x 2007mm - Queen:169008,PSet_Revit_Type_Identity Data,Assembly Code,str
+0iEHWY1$XA8eQeeULq4j7w,IfcFurnishingElement,M_Upper Cabinet-Double Door-Wall:1000 mm:1000 mm:191401,PSet_Revit_Type_Identity Data,Assembly Code,str
+0iEHWY1$XA8eQeeULq4jOM,IfcFurnishingElement,M_Upper Cabinet-Double Door-Wall:1000 mm:1000 mm:191557,PSet_Revit_Type_Identity Data,Assembly Code,str
+0iEHWY1$XA8eQeeULq4jQJ,IfcFurnishingElement,M_Upper Cabinet-Double Door-Wall:1000 mm:1000 mm:191680,PSet_Revit_Type_Identity Data,Assembly Code,str
+0iEHWY1$XA8eQeeULq4jTB,IfcFurnishingElement,M_Upper Cabinet-Double Door-Wall:1000mm:1000mm:191768,PSet_Revit_Type_Identity Data,Assembly Code,str
+0iEHWY1$XA8eQeeULq4jJA,IfcFurnishingElement,M_Upper Cabinet-Double Door-Wall:1000 mm:1000 mm:192153,PSet_Revit_Type_Identity Data,Assembly Code,str
+0iEHWY1$XA8eQeeULq4jKO,IfcFurnishingElement,M_Upper Cabinet-Double Door-Wall:1000 mm:1000 mm:192331,PSet_Revit_Type_Identity Data,Assembly Code,str
+0iEHWY1$XA8eQeeULq4jMl,IfcFurnishingElement,M_Upper Cabinet-Double Door-Wall:1000 mm:1000 mm:192508,PSet_Revit_Type_Identity Data,Assembly Code,str
+0iEHWY1$XA8eQeeULq4ien,IfcFurnishingElement,M_Upper Cabinet-Double Door-Wall:1000mm:1000mm:192610,PSet_Revit_Type_Identity Data,Assembly Code,str
+2gRXFgjRn2HPE$YoDLX0mp,IfcFurnishingElement,M_Vanity Cabinet-Double Door Sink Unit:650 x 450 mm:650 x 450 mm:204934,PSet_Revit_Type_Identity Data,Assembly Code,str
+2gRXFgjRn2HPE$YoDLX0q2,IfcFurnishingElement,M_Vanity Cabinet-Double Door Sink Unit:650 x 450 mm:650 x 450 mm:205239,PSet_Revit_Type_Identity Data,Assembly Code,str
+2gRXFgjRn2HPE$YoDLX0rb,IfcFurnishingElement,M_Vanity Cabinet-Double Door Sink Unit:650 x 450 mm:650 x 450 mm:205264,PSet_Revit_Type_Identity Data,Assembly Code,str
+2gRXFgjRn2HPE$YoDLX0ra,IfcFurnishingElement,M_Vanity Cabinet-Double Door Sink Unit:650 x 450 mm:650 x 450 mm:205265,PSet_Revit_Type_Identity Data,Assembly Code,str
+2gRXFgjRn2HPE$YoDLX0vP,IfcFurnishingElement,M_Vanity Cabinet-Double Door Sink Unit:450 x 450 mm:450 x 450 mm:205548,PSet_Revit_Type_Identity Data,Assembly Code,str
+2kvhekJrnDjRw0CDkKW$UD,IfcFurnishingElement,M_Table-Coffee:0610 x 0610 x 0610mm:0610 x 0610 x 0610mm:206283,PSet_Revit_Type_Identity Data,Assembly Code,str
+2kvhekJrnDjRw0CDkKW$JW,IfcFurnishingElement,M_Table-Coffee:0610 x 0610 x 0610mm:0610 x 0610 x 0610mm:206502,PSet_Revit_Type_Identity Data,Assembly Code,str
+2kvhekJrnDjRw0CDkKW$KL,IfcFurnishingElement,M_Table-Coffee:0610 x 0610 x 0610mm:0610 x 0610 x 0610mm:206675,PSet_Revit_Type_Identity Data,Assembly Code,str
+2kvhekJrnDjRw0CDkKW$fQ,IfcFurnishingElement,M_Table-Coffee:0610 x 0610 x 0610mm:0610 x 0610 x 0610mm:206876,PSet_Revit_Type_Identity Data,Assembly Code,str
+0wkEuT1wr1kOyafLY4vyu$,IfcFurnishingElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157200,PSet_Revit_Type_Identity Data,Assembly Description,str
+0wkEuT1wr1kOyafLY4vy_8,IfcFurnishingElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157607,PSet_Revit_Type_Identity Data,Assembly Description,str
+0wkEuT1wr1kOyafLY4vy3H,IfcFurnishingElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157950,PSet_Revit_Type_Identity Data,Assembly Description,str
+0wkEuT1wr1kOyafLY4vy3G,IfcFurnishingElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157951,PSet_Revit_Type_Identity Data,Assembly Description,str
+0wkEuT1wr1kOyafLY4vy4m,IfcFurnishingElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157983,PSet_Revit_Type_Identity Data,Assembly Description,str
+0wkEuT1wr1kOyafLY4vy4F,IfcFurnishingElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157984,PSet_Revit_Type_Identity Data,Assembly Description,str
+0wkEuT1wr1kOyafLY4vy6l,IfcFurnishingElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:158080,PSet_Revit_Type_Identity Data,Assembly Description,str
+0wkEuT1wr1kOyafLY4vy6k,IfcFurnishingElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:158081,PSet_Revit_Type_Identity Data,Assembly Description,str
+0wkEuT1wr1kOyafLY4vyMO,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:159159,PSet_Revit_Type_Identity Data,Assembly Description,str
+0wkEuT1wr1kOyafLY4vyOn,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:159262,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvGQ,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:160671,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvH8,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:160717,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUv88,IfcFurnishingElement,M_Counter Top w Sink Hole:600mm Depth:600mm Depth:161165,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUv3h,IfcFurnishingElement,M_Counter Top:600mm Depth:600mm Depth:161646,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvup,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162230,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvuo,IfcFurnishingElement,M_Counter Top:600mm Depth:600mm Depth:162231,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvs2,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162311,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvsm,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162357,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvtA,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162383,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvqp,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162486,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvqo,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162487,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvqz,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162488,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvqy,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162489,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvq$,IfcFurnishingElement,M_Counter Top w Sink Hole:600mm Depth:600mm Depth:162490,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvq_,IfcFurnishingElement,M_Counter Top:600mm Depth:600mm Depth:162491,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvqu,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162493,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvqx,IfcFurnishingElement,M_Counter Top:600mm Depth:600mm Depth:162494,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvqw,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162495,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvr5,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162496,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUvr4,IfcFurnishingElement,M_Base Cabinet-Double Door & 2 Drawer:1000mm:1000mm:162497,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUshs,IfcFurnishingElement,M_Sofa:1830mm:1830mm:167283,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUsc7,IfcFurnishingElement,M_Sofa:1830mm:1830mm:167426,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUsab,IfcFurnishingElement,M_Table-Coffee:0610 x 0610 x 0610mm:0610 x 0610 x 0610mm:167584,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUsbY,IfcFurnishingElement,M_Table-Coffee:0610 x 0610 x 0610mm:0610 x 0610 x 0610mm:167655,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtVQ,IfcFurnishingElement,M_Table-Coffee:0915 x 1830 x 0457mm:0915 x 1830 x 0457mm:168031,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtOy,IfcFurnishingElement,M_Sofa:1830mm:1830mm:168377,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtO$,IfcFurnishingElement,M_Sofa:1830mm:1830mm:168378,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtO_,IfcFurnishingElement,M_Table-Coffee:0610 x 0610 x 0610mm:0610 x 0610 x 0610mm:168379,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtOv,IfcFurnishingElement,M_Table-Coffee:0610 x 0610 x 0610mm:0610 x 0610 x 0610mm:168380,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtOu,IfcFurnishingElement,M_Table-Coffee:0915 x 1830 x 0457mm:0915 x 1830 x 0457mm:168381,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtM4,IfcFurnishingElement,M_Bed-Standard:1525 x 2007mm - Queen:1525 x 2007mm - Queen:168449,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtI8,IfcFurnishingElement,M_Bed-Standard:1981 x 2032mm - King:1981 x 2032mm - King:168717,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtHN,IfcFurnishingElement,M_Bed-Standard:1981 x 2032mm - King:1981 x 2032mm - King:168914,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtEr,IfcFurnishingElement,M_Bed-Standard:1525 x 2007mm - Queen:1525 x 2007mm - Queen:169008,PSet_Revit_Type_Identity Data,Assembly Description,str
+0iEHWY1$XA8eQeeULq4j7w,IfcFurnishingElement,M_Upper Cabinet-Double Door-Wall:1000 mm:1000 mm:191401,PSet_Revit_Type_Identity Data,Assembly Description,str
+0iEHWY1$XA8eQeeULq4jOM,IfcFurnishingElement,M_Upper Cabinet-Double Door-Wall:1000 mm:1000 mm:191557,PSet_Revit_Type_Identity Data,Assembly Description,str
+0iEHWY1$XA8eQeeULq4jQJ,IfcFurnishingElement,M_Upper Cabinet-Double Door-Wall:1000 mm:1000 mm:191680,PSet_Revit_Type_Identity Data,Assembly Description,str
+0iEHWY1$XA8eQeeULq4jTB,IfcFurnishingElement,M_Upper Cabinet-Double Door-Wall:1000mm:1000mm:191768,PSet_Revit_Type_Identity Data,Assembly Description,str
+0iEHWY1$XA8eQeeULq4jJA,IfcFurnishingElement,M_Upper Cabinet-Double Door-Wall:1000 mm:1000 mm:192153,PSet_Revit_Type_Identity Data,Assembly Description,str
+0iEHWY1$XA8eQeeULq4jKO,IfcFurnishingElement,M_Upper Cabinet-Double Door-Wall:1000 mm:1000 mm:192331,PSet_Revit_Type_Identity Data,Assembly Description,str
+0iEHWY1$XA8eQeeULq4jMl,IfcFurnishingElement,M_Upper Cabinet-Double Door-Wall:1000 mm:1000 mm:192508,PSet_Revit_Type_Identity Data,Assembly Description,str
+0iEHWY1$XA8eQeeULq4ien,IfcFurnishingElement,M_Upper Cabinet-Double Door-Wall:1000mm:1000mm:192610,PSet_Revit_Type_Identity Data,Assembly Description,str
+2gRXFgjRn2HPE$YoDLX0mp,IfcFurnishingElement,M_Vanity Cabinet-Double Door Sink Unit:650 x 450 mm:650 x 450 mm:204934,PSet_Revit_Type_Identity Data,Assembly Description,str
+2gRXFgjRn2HPE$YoDLX0q2,IfcFurnishingElement,M_Vanity Cabinet-Double Door Sink Unit:650 x 450 mm:650 x 450 mm:205239,PSet_Revit_Type_Identity Data,Assembly Description,str
+2gRXFgjRn2HPE$YoDLX0rb,IfcFurnishingElement,M_Vanity Cabinet-Double Door Sink Unit:650 x 450 mm:650 x 450 mm:205264,PSet_Revit_Type_Identity Data,Assembly Description,str
+2gRXFgjRn2HPE$YoDLX0ra,IfcFurnishingElement,M_Vanity Cabinet-Double Door Sink Unit:650 x 450 mm:650 x 450 mm:205265,PSet_Revit_Type_Identity Data,Assembly Description,str
+2gRXFgjRn2HPE$YoDLX0vP,IfcFurnishingElement,M_Vanity Cabinet-Double Door Sink Unit:450 x 450 mm:450 x 450 mm:205548,PSet_Revit_Type_Identity Data,Assembly Description,str
+2kvhekJrnDjRw0CDkKW$UD,IfcFurnishingElement,M_Table-Coffee:0610 x 0610 x 0610mm:0610 x 0610 x 0610mm:206283,PSet_Revit_Type_Identity Data,Assembly Description,str
+2kvhekJrnDjRw0CDkKW$JW,IfcFurnishingElement,M_Table-Coffee:0610 x 0610 x 0610mm:0610 x 0610 x 0610mm:206502,PSet_Revit_Type_Identity Data,Assembly Description,str
+2kvhekJrnDjRw0CDkKW$KL,IfcFurnishingElement,M_Table-Coffee:0610 x 0610 x 0610mm:0610 x 0610 x 0610mm:206675,PSet_Revit_Type_Identity Data,Assembly Description,str
+2kvhekJrnDjRw0CDkKW$fQ,IfcFurnishingElement,M_Table-Coffee:0610 x 0610 x 0610mm:0610 x 0610 x 0610mm:206876,PSet_Revit_Type_Identity Data,Assembly Description,str
+1JMZUwOon6WAV1rBBORAVn,IfcOpeningElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157200:1,PSet_Revit_Type_Identity Data,Assembly Code,str
+0st2Ty2kP2i9GWVYN22HBn,IfcOpeningElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157607:1,PSet_Revit_Type_Identity Data,Assembly Code,str
+1ur9wqEhD1fgF0XSBVdztK,IfcOpeningElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157950:1,PSet_Revit_Type_Identity Data,Assembly Code,str
+2fQjX2SrTFrxFKC2cOmyZz,IfcOpeningElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157951:1,PSet_Revit_Type_Identity Data,Assembly Code,str
+3yrt06HiHCHQOnRKTWhuME,IfcOpeningElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157983:1,PSet_Revit_Type_Identity Data,Assembly Code,str
+1dqkh_grrAr8eEicMrPggp,IfcOpeningElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157984:1,PSet_Revit_Type_Identity Data,Assembly Code,str
+24EFH82h1DgeJVWlc35MMP,IfcOpeningElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:158080:1,PSet_Revit_Type_Identity Data,Assembly Code,str
+2YwZmYlr9AiPDZRZmucxc5,IfcOpeningElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:158081:1,PSet_Revit_Type_Identity Data,Assembly Code,str
+1_czKmicP9SRkaew1L5q7Z,IfcOpeningElement,M_Counter Top w Sink Hole:600mm Depth:600mm Depth:161165:1,PSet_Revit_Type_Identity Data,Assembly Code,str
+3obae0iBn5i9Cv4Ub3eEXf,IfcOpeningElement,M_Counter Top w Sink Hole:600mm Depth:600mm Depth:162490:1,PSet_Revit_Type_Identity Data,Assembly Code,str
+3v9a8BKHj2mvcndWrD6JMo,IfcOpeningElement,Basic Roof:Live Roof over Wood Joist Flat Roof:184483:2,PSet_Revit_Type_Identity Data,Assembly Code,str
+0c3kWfbRLERxKStRVifSpJ,IfcOpeningElement,Basic Roof:Live Roof over Wood Joist Flat Roof:184483:3,PSet_Revit_Type_Identity Data,Assembly Code,str
+1xS3BCk291UvhgP2dvNxVS,IfcOpeningElement,,PSet_Revit_Type_Identity Data,Assembly Code,str
+1xS3BCk291UvhgP2dvNx5J,IfcOpeningElement,,PSet_Revit_Type_Identity Data,Assembly Code,str
+1JMZUwOon6WAV1rBBORAVn,IfcOpeningElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157200:1,PSet_Revit_Type_Identity Data,Assembly Description,str
+0st2Ty2kP2i9GWVYN22HBn,IfcOpeningElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157607:1,PSet_Revit_Type_Identity Data,Assembly Description,str
+1ur9wqEhD1fgF0XSBVdztK,IfcOpeningElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157950:1,PSet_Revit_Type_Identity Data,Assembly Description,str
+2fQjX2SrTFrxFKC2cOmyZz,IfcOpeningElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157951:1,PSet_Revit_Type_Identity Data,Assembly Description,str
+3yrt06HiHCHQOnRKTWhuME,IfcOpeningElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157983:1,PSet_Revit_Type_Identity Data,Assembly Description,str
+1dqkh_grrAr8eEicMrPggp,IfcOpeningElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:157984:1,PSet_Revit_Type_Identity Data,Assembly Description,str
+24EFH82h1DgeJVWlc35MMP,IfcOpeningElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:158080:1,PSet_Revit_Type_Identity Data,Assembly Description,str
+2YwZmYlr9AiPDZRZmucxc5,IfcOpeningElement,M_Tall Cabinet-Single Door(2):800 mm:800 mm:158081:1,PSet_Revit_Type_Identity Data,Assembly Description,str
+1_czKmicP9SRkaew1L5q7Z,IfcOpeningElement,M_Counter Top w Sink Hole:600mm Depth:600mm Depth:161165:1,PSet_Revit_Type_Identity Data,Assembly Description,str
+3obae0iBn5i9Cv4Ub3eEXf,IfcOpeningElement,M_Counter Top w Sink Hole:600mm Depth:600mm Depth:162490:1,PSet_Revit_Type_Identity Data,Assembly Description,str
+3v9a8BKHj2mvcndWrD6JMo,IfcOpeningElement,Basic Roof:Live Roof over Wood Joist Flat Roof:184483:2,PSet_Revit_Type_Identity Data,Assembly Description,str
+0c3kWfbRLERxKStRVifSpJ,IfcOpeningElement,Basic Roof:Live Roof over Wood Joist Flat Roof:184483:3,PSet_Revit_Type_Identity Data,Assembly Description,str
+1xS3BCk291UvhgP2dvNxVS,IfcOpeningElement,,PSet_Revit_Type_Identity Data,Assembly Description,str
+1xS3BCk291UvhgP2dvNx5J,IfcOpeningElement,,PSet_Revit_Type_Identity Data,Assembly Description,str
+0wkEuT1wr1kOyafLY4v_PL,IfcRailing,Railing:900mm Handrail Only:151162,PSet_Revit_Type_Identity Data,Assembly Code,str
+0wkEuT1wr1kOyafLY4v_PH,IfcRailing,Railing:1100mm Guard Rail:151166,PSet_Revit_Type_Identity Data,Assembly Code,str
+21ldoMpbP4VfsJ0XGY_34P,IfcRailing,Railing:900mm Handrail Only:198880,PSet_Revit_Type_Identity Data,Assembly Code,str
+21ldoMpbP4VfsJ0XGY_335,IfcRailing,Railing:1100mm Guard Rail:198972,PSet_Revit_Type_Identity Data,Assembly Code,str
+0wkEuT1wr1kOyafLY4v_PL,IfcRailing,Railing:900mm Handrail Only:151162,PSet_Revit_Type_Identity Data,Assembly Description,str
+0wkEuT1wr1kOyafLY4v_PH,IfcRailing,Railing:1100mm Guard Rail:151166,PSet_Revit_Type_Identity Data,Assembly Description,str
+21ldoMpbP4VfsJ0XGY_34P,IfcRailing,Railing:900mm Handrail Only:198880,PSet_Revit_Type_Identity Data,Assembly Description,str
+21ldoMpbP4VfsJ0XGY_335,IfcRailing,Railing:1100mm Guard Rail:198972,PSet_Revit_Type_Identity Data,Assembly Description,str
+0jf0rYHfX3RAB3bSIRjmxl,IfcRoof,Basic Roof:Live Roof over Wood Joist Flat Roof:184483,PSet_Revit_Type_Identity Data,Assembly Code,str
+0jf0rYHfX3RAB3bSIRjmxl,IfcRoof,Basic Roof:Live Roof over Wood Joist Flat Roof:184483,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FK4F,IfcSlab,Floor:127mm Slab on Grade:141232,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FKcz,IfcSlab,Floor:127mm Slab on Grade:143106,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlRqU,IfcSlab,Floor:Residential - Wood Joist with Subflooring:144800,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlRrM,IfcSlab,Floor:Residential - Wood Joist with Subflooring:144872,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtC0,IfcSlab,Floor:Finish Floor - Wood:169093,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtDX,IfcSlab,Floor:Finish Floor - Wood:169188,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtBP,IfcSlab,Floor:Finish Floor - Wood:169308,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUt8F,IfcSlab,Floor:Finish Floor - Wood:169354,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUt8s,IfcSlab,Floor:Finish Floor - Wood:169395,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUt5W,IfcSlab,Floor:Finish Floor - Wood:169701,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUt2f,IfcSlab,Floor:Finish Floor - Ceramic Tile:169772,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUt0F,IfcSlab,Floor:Finish Floor - Ceramic Tile:169866,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtxr,IfcSlab,Floor:Finish Floor - Wood:170352,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtoa,IfcSlab,Floor:Finish Floor - Ceramic Tile:170785,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtjR,IfcSlab,Floor:Finish Floor - Ceramic Tile:171230,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtju,IfcSlab,Floor:Finish Floor - Ceramic Tile:171261,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUtgP,IfcSlab,Floor:Finish Floor - Wood:171292,PSet_Revit_Type_Identity Data,Assembly Code,str
+2OBrcmyk58NupXoVOHUten,IfcSlab,Floor:Finish Floor - Ceramic Tile:171444,PSet_Revit_Type_Identity Data,Assembly Code,str
+1CZILmCaHETO8tf3SgGEWh,IfcSlab,Floor:150mm Exterior Slab on Grade:216507,PSet_Revit_Type_Identity Data,Assembly Code,str
+1CZILmCaHETO8tf3SgGEXu,IfcSlab,Floor:150mm Exterior Slab on Grade:216552,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FK4F,IfcSlab,Floor:127mm Slab on Grade:141232,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FKcz,IfcSlab,Floor:127mm Slab on Grade:143106,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlRqU,IfcSlab,Floor:Residential - Wood Joist with Subflooring:144800,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlRrM,IfcSlab,Floor:Residential - Wood Joist with Subflooring:144872,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtC0,IfcSlab,Floor:Finish Floor - Wood:169093,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtDX,IfcSlab,Floor:Finish Floor - Wood:169188,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtBP,IfcSlab,Floor:Finish Floor - Wood:169308,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUt8F,IfcSlab,Floor:Finish Floor - Wood:169354,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUt8s,IfcSlab,Floor:Finish Floor - Wood:169395,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUt5W,IfcSlab,Floor:Finish Floor - Wood:169701,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUt2f,IfcSlab,Floor:Finish Floor - Ceramic Tile:169772,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUt0F,IfcSlab,Floor:Finish Floor - Ceramic Tile:169866,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtxr,IfcSlab,Floor:Finish Floor - Wood:170352,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtoa,IfcSlab,Floor:Finish Floor - Ceramic Tile:170785,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtjR,IfcSlab,Floor:Finish Floor - Ceramic Tile:171230,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtju,IfcSlab,Floor:Finish Floor - Ceramic Tile:171261,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUtgP,IfcSlab,Floor:Finish Floor - Wood:171292,PSet_Revit_Type_Identity Data,Assembly Description,str
+2OBrcmyk58NupXoVOHUten,IfcSlab,Floor:Finish Floor - Ceramic Tile:171444,PSet_Revit_Type_Identity Data,Assembly Description,str
+1CZILmCaHETO8tf3SgGEWh,IfcSlab,Floor:150mm Exterior Slab on Grade:216507,PSet_Revit_Type_Identity Data,Assembly Description,str
+1CZILmCaHETO8tf3SgGEXu,IfcSlab,Floor:150mm Exterior Slab on Grade:216552,PSet_Revit_Type_Identity Data,Assembly Description,str
+0wkEuT1wr1kOyafLY4v_O1,IfcStair,Stair:Residential - 200mm Max Riser 250mm Tread:151086,PSet_Revit_Type_Identity Data,Assembly Code,str
+21ldoMpbP4VfsJ0XGY_34d,IfcStair,Stair:Residential - 200mm Max Riser 250mm Tread:198878,PSet_Revit_Type_Identity Data,Assembly Code,str
+0wkEuT1wr1kOyafLY4v_O1,IfcStair,Stair:Residential - 200mm Max Riser 250mm Tread:151086,PSet_Revit_Type_Identity Data,Assembly Description,str
+21ldoMpbP4VfsJ0XGY_34d,IfcStair,Stair:Residential - 200mm Max Riser 250mm Tread:198878,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FKau,IfcWall,Basic Wall:Party Wall - CMU Residential Unit Dimising Wall:143239,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FKau,IfcWall,Basic Wall:Party Wall - CMU Residential Unit Dimising Wall:143239,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FNld,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):138584,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FNbT,IfcWallStandardCase,Basic Wall:Party Wall - CMU Residential Unit Dimising Wall:139234,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FKRi,IfcWallStandardCase,Basic Wall:Party Wall - CMU Residential Unit Dimising Wall:139347,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FKRH,IfcWallStandardCase,Basic Wall:Party Wall - CMU Residential Unit Dimising Wall:139374,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FKIu,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):139783,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FKGS,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):139939,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FK80,IfcWallStandardCase,Basic Wall:Foundation - Concrete (417mm):140479,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FK9N,IfcWallStandardCase,Basic Wall:Foundation - Concrete (417mm):140520,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FKEr,IfcWallStandardCase,Basic Wall:Foundation - Concrete (417mm):140554,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FKE5,IfcWallStandardCase,Basic Wall:Foundation - Concrete (417mm):140602,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FK3E,IfcWallStandardCase,Basic Wall:Foundation - Concrete (435mm):140913,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FK04,IfcWallStandardCase,Basic Wall:Foundation - Concrete (435mm):140987,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FK1b,IfcWallStandardCase,Basic Wall:Foundation - Concrete (435mm):141018,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FLMr,IfcWallStandardCase,Basic Wall:Interior - Plumbing (152mm Stud):144138,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FLKI,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):144301,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FLEJ,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):144684,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FLCm,IfcWallStandardCase,Basic Wall:Interior - Plumbing (152mm Stud):144783,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FNqI,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:138157,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FNhv,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:138310,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FLQD,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:143410,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FLOH,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:143534,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FKST,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):139682,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FNau,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):139143,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FLTF,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):143856,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FL8v,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):144518,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FLJd,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):143960,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FL96,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):144633,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FLIE,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):143921,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FL9r,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):144586,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FNtn,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:138062,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FNr2,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:138237,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FLR9,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:143478,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FLPP,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:143590,PSet_Revit_Type_Identity Data,Assembly Code,str
+0jf0rYHfX3RAB3bSIRjmmy,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:184944,PSet_Revit_Type_Identity Data,Assembly Code,str
+0jf0rYHfX3RAB3bSIRjmpw,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:185014,PSet_Revit_Type_Identity Data,Assembly Code,str
+0jf0rYHfX3RAB3bSIRjmoa,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:185064,PSet_Revit_Type_Identity Data,Assembly Code,str
+0jf0rYHfX3RAB3bSIRjmr1,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:185101,PSet_Revit_Type_Identity Data,Assembly Code,str
+0iEHWY1$XA8eQeeULq4jZ1,IfcWallStandardCase,Basic Wall:Interior - Furring (152 mm Stud):189074,PSet_Revit_Type_Identity Data,Assembly Code,str
+0iEHWY1$XA8eQeeULq4j_U,IfcWallStandardCase,Basic Wall:Interior - Furring (152 mm Stud):189901,PSet_Revit_Type_Identity Data,Assembly Code,str
+0iEHWY1$XA8eQeeULq4jpl,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):190140,PSet_Revit_Type_Identity Data,Assembly Code,str
+0iEHWY1$XA8eQeeULq4jDb,IfcWallStandardCase,Basic Wall:Interior - Furring (152 mm Stud):190774,PSet_Revit_Type_Identity Data,Assembly Code,str
+0iEHWY1$XA8eQeeULq4jE6,IfcWallStandardCase,Basic Wall:Interior - Furring (152 mm Stud):190933,PSet_Revit_Type_Identity Data,Assembly Code,str
+0dxE1Sy6nDqfpDb5vIMNiA,IfcWallStandardCase,Basic Wall:Interior - Furring (152 mm Stud):193247,PSet_Revit_Type_Identity Data,Assembly Code,str
+0dxE1Sy6nDqfpDb5vIMN_Z,IfcWallStandardCase,Basic Wall:Interior - Furring (152 mm Stud):194166,PSet_Revit_Type_Identity Data,Assembly Code,str
+1aj$VJZFn2TxepZUBcKpvt,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):203347,PSet_Revit_Type_Identity Data,Assembly Code,str
+1aj$VJZFn2TxepZUBcKpZw,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):203998,PSet_Revit_Type_Identity Data,Assembly Code,str
+1aj$VJZFn2TxepZUBcKpee,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):204300,PSet_Revit_Type_Identity Data,Assembly Code,str
+1aj$VJZFn2TxepZUBcKphf,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):204493,PSet_Revit_Type_Identity Data,Assembly Code,str
+3Y4YRln2r91vflHcHE5IVS,IfcWallStandardCase,Basic Wall:Interior - Furring (38 mm Stud):217414,PSet_Revit_Type_Identity Data,Assembly Code,str
+3Y4YRln2r91vflHcHE5IVT,IfcWallStandardCase,Basic Wall:Interior - Furring (38 mm Stud):217415,PSet_Revit_Type_Identity Data,Assembly Code,str
+3Y4YRln2r91vflHcHE5IVI,IfcWallStandardCase,Basic Wall:Interior - Furring (38 mm Stud):217416,PSet_Revit_Type_Identity Data,Assembly Code,str
+3Y4YRln2r91vflHcHE5IVJ,IfcWallStandardCase,Basic Wall:Interior - Furring (38 mm Stud):217417,PSet_Revit_Type_Identity Data,Assembly Code,str
+3Y4YRln2r91vflHcHE5ITp,IfcWallStandardCase,Basic Wall:Interior - Furring (38 mm Stud):217577,PSet_Revit_Type_Identity Data,Assembly Code,str
+3Y4YRln2r91vflHcHE5ITm,IfcWallStandardCase,Basic Wall:Interior - Furring (38 mm Stud):217578,PSet_Revit_Type_Identity Data,Assembly Code,str
+3Y4YRln2r91vflHcHE5ITn,IfcWallStandardCase,Basic Wall:Interior - Furring (38 mm Stud):217579,PSet_Revit_Type_Identity Data,Assembly Code,str
+3Y4YRln2r91vflHcHE5ITs,IfcWallStandardCase,Basic Wall:Interior - Furring (38 mm Stud):217580,PSet_Revit_Type_Identity Data,Assembly Code,str
+2O2Fr$t4X7Zf8NOew3FNld,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):138584,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FNbT,IfcWallStandardCase,Basic Wall:Party Wall - CMU Residential Unit Dimising Wall:139234,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FKRi,IfcWallStandardCase,Basic Wall:Party Wall - CMU Residential Unit Dimising Wall:139347,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FKRH,IfcWallStandardCase,Basic Wall:Party Wall - CMU Residential Unit Dimising Wall:139374,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FKIu,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):139783,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FKGS,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):139939,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FK80,IfcWallStandardCase,Basic Wall:Foundation - Concrete (417mm):140479,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FK9N,IfcWallStandardCase,Basic Wall:Foundation - Concrete (417mm):140520,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FKEr,IfcWallStandardCase,Basic Wall:Foundation - Concrete (417mm):140554,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FKE5,IfcWallStandardCase,Basic Wall:Foundation - Concrete (417mm):140602,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FK3E,IfcWallStandardCase,Basic Wall:Foundation - Concrete (435mm):140913,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FK04,IfcWallStandardCase,Basic Wall:Foundation - Concrete (435mm):140987,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FK1b,IfcWallStandardCase,Basic Wall:Foundation - Concrete (435mm):141018,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FLMr,IfcWallStandardCase,Basic Wall:Interior - Plumbing (152mm Stud):144138,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FLKI,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):144301,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FLEJ,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):144684,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FLCm,IfcWallStandardCase,Basic Wall:Interior - Plumbing (152mm Stud):144783,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FNqI,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:138157,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FNhv,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:138310,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FLQD,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:143410,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FLOH,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:143534,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FKST,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):139682,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FNau,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):139143,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FLTF,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):143856,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FL8v,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):144518,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FLJd,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):143960,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FL96,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):144633,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FLIE,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):143921,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FL9r,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):144586,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FNtn,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:138062,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FNr2,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:138237,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FLR9,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:143478,PSet_Revit_Type_Identity Data,Assembly Description,str
+2O2Fr$t4X7Zf8NOew3FLPP,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:143590,PSet_Revit_Type_Identity Data,Assembly Description,str
+0jf0rYHfX3RAB3bSIRjmmy,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:184944,PSet_Revit_Type_Identity Data,Assembly Description,str
+0jf0rYHfX3RAB3bSIRjmpw,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:185014,PSet_Revit_Type_Identity Data,Assembly Description,str
+0jf0rYHfX3RAB3bSIRjmoa,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:185064,PSet_Revit_Type_Identity Data,Assembly Description,str
+0jf0rYHfX3RAB3bSIRjmr1,IfcWallStandardCase,Basic Wall:Exterior - Brick on Block:185101,PSet_Revit_Type_Identity Data,Assembly Description,str
+0iEHWY1$XA8eQeeULq4jZ1,IfcWallStandardCase,Basic Wall:Interior - Furring (152 mm Stud):189074,PSet_Revit_Type_Identity Data,Assembly Description,str
+0iEHWY1$XA8eQeeULq4j_U,IfcWallStandardCase,Basic Wall:Interior - Furring (152 mm Stud):189901,PSet_Revit_Type_Identity Data,Assembly Description,str
+0iEHWY1$XA8eQeeULq4jpl,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):190140,PSet_Revit_Type_Identity Data,Assembly Description,str
+0iEHWY1$XA8eQeeULq4jDb,IfcWallStandardCase,Basic Wall:Interior - Furring (152 mm Stud):190774,PSet_Revit_Type_Identity Data,Assembly Description,str
+0iEHWY1$XA8eQeeULq4jE6,IfcWallStandardCase,Basic Wall:Interior - Furring (152 mm Stud):190933,PSet_Revit_Type_Identity Data,Assembly Description,str
+0dxE1Sy6nDqfpDb5vIMNiA,IfcWallStandardCase,Basic Wall:Interior - Furring (152 mm Stud):193247,PSet_Revit_Type_Identity Data,Assembly Description,str
+0dxE1Sy6nDqfpDb5vIMN_Z,IfcWallStandardCase,Basic Wall:Interior - Furring (152 mm Stud):194166,PSet_Revit_Type_Identity Data,Assembly Description,str
+1aj$VJZFn2TxepZUBcKpvt,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):203347,PSet_Revit_Type_Identity Data,Assembly Description,str
+1aj$VJZFn2TxepZUBcKpZw,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):203998,PSet_Revit_Type_Identity Data,Assembly Description,str
+1aj$VJZFn2TxepZUBcKpee,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):204300,PSet_Revit_Type_Identity Data,Assembly Description,str
+1aj$VJZFn2TxepZUBcKphf,IfcWallStandardCase,Basic Wall:Interior - Partition (92mm Stud):204493,PSet_Revit_Type_Identity Data,Assembly Description,str
+3Y4YRln2r91vflHcHE5IVS,IfcWallStandardCase,Basic Wall:Interior - Furring (38 mm Stud):217414,PSet_Revit_Type_Identity Data,Assembly Description,str
+3Y4YRln2r91vflHcHE5IVT,IfcWallStandardCase,Basic Wall:Interior - Furring (38 mm Stud):217415,PSet_Revit_Type_Identity Data,Assembly Description,str
+3Y4YRln2r91vflHcHE5IVI,IfcWallStandardCase,Basic Wall:Interior - Furring (38 mm Stud):217416,PSet_Revit_Type_Identity Data,Assembly Description,str
+3Y4YRln2r91vflHcHE5IVJ,IfcWallStandardCase,Basic Wall:Interior - Furring (38 mm Stud):217417,PSet_Revit_Type_Identity Data,Assembly Description,str
+3Y4YRln2r91vflHcHE5ITp,IfcWallStandardCase,Basic Wall:Interior - Furring (38 mm Stud):217577,PSet_Revit_Type_Identity Data,Assembly Description,str
+3Y4YRln2r91vflHcHE5ITm,IfcWallStandardCase,Basic Wall:Interior - Furring (38 mm Stud):217578,PSet_Revit_Type_Identity Data,Assembly Description,str
+3Y4YRln2r91vflHcHE5ITn,IfcWallStandardCase,Basic Wall:Interior - Furring (38 mm Stud):217579,PSet_Revit_Type_Identity Data,Assembly Description,str
+3Y4YRln2r91vflHcHE5ITs,IfcWallStandardCase,Basic Wall:Interior - Furring (38 mm Stud):217580,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlR72,IfcWindow,M_Fixed:4835mm x 2420mm:4835mm x 2420mm:145788,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlRBU,IfcWindow,M_Fixed:4835mm x 2420mm:4835mm x 2420mm:146016,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlRLx,IfcWindow,M_Fixed:750mm x 2200mm:750mm x 2200mm:146885,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlRRL,IfcWindow,M_Fixed:750mm x 2200mm:750mm x 2200mm:147051,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlSXO,IfcWindow,M_Fixed:2800mm x 2410mm:2800mm x 2410mm:147686,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlSga,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:147994,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlSp1,IfcWindow,M_Casement:819mm x 759mm:819mm x 759mm:148607,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlSnC,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:148722,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlS_W,IfcWindow,M_Fixed:2800mm x 2410mm:2800mm x 2410mm:149278,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlS2V,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:149537,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlS1M,IfcWindow,M_Casement:819mm x 759mm:819mm x 759mm:149736,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlS4Q,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:149924,PSet_Revit_Type_Identity Data,Assembly Code,str
+1l0GAJtRTFv8$zmKJOH4$e,IfcWindow,M_Fixed:2800mm x 2410mm:2800mm x 2410mm:180318,PSet_Revit_Type_Identity Data,Assembly Code,str
+1l0GAJtRTFv8$zmKJOH4u1,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:180663,PSet_Revit_Type_Identity Data,Assembly Code,str
+1l0GAJtRTFv8$zmKJOH4qs,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:180864,PSet_Revit_Type_Identity Data,Assembly Code,str
+1l0GAJtRTFv8$zmKJOH4oq,IfcWindow,M_Casement:819mm x 759mm:819mm x 759mm:180994,PSet_Revit_Type_Identity Data,Assembly Code,str
+1l0GAJtRTFv8$zmKJOH4pU,IfcWindow,M_Fixed:2800mm x 2410mm:2800mm x 2410mm:181096,PSet_Revit_Type_Identity Data,Assembly Code,str
+1l0GAJtRTFv8$zmKJOH4kJ,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:181285,PSet_Revit_Type_Identity Data,Assembly Code,str
+1l0GAJtRTFv8$zmKJOH4gQ,IfcWindow,M_Casement:819mm x 759mm:819mm x 759mm:181548,PSet_Revit_Type_Identity Data,Assembly Code,str
+1l0GAJtRTFv8$zmKJOH4hv,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:181583,PSet_Revit_Type_Identity Data,Assembly Code,str
+1l0GAJtRTFv8$zmKJOH4aS,IfcWindow,M_Fixed:750mm x 2200mm:750mm x 2200mm:181930,PSet_Revit_Type_Identity Data,Assembly Code,str
+1l0GAJtRTFv8$zmKJOH4ZZ,IfcWindow,M_Fixed:750mm x 2200mm:750mm x 2200mm:182101,PSet_Revit_Type_Identity Data,Assembly Code,str
+1Eo2$BaHX42AEkDvQQDocD,IfcWindow,M_Skylight:1180 x 1170mm:1180 x 1170mm:185337,PSet_Revit_Type_Identity Data,Assembly Code,str
+1Eo2$BaHX42AEkDvQQDoy2,IfcWindow,M_Skylight:1180 x 1170mm:1180 x 1170mm:185718,PSet_Revit_Type_Identity Data,Assembly Code,str
+1hOSvn6df7F8_7GcBWlR72,IfcWindow,M_Fixed:4835mm x 2420mm:4835mm x 2420mm:145788,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlRBU,IfcWindow,M_Fixed:4835mm x 2420mm:4835mm x 2420mm:146016,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlRLx,IfcWindow,M_Fixed:750mm x 2200mm:750mm x 2200mm:146885,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlRRL,IfcWindow,M_Fixed:750mm x 2200mm:750mm x 2200mm:147051,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlSXO,IfcWindow,M_Fixed:2800mm x 2410mm:2800mm x 2410mm:147686,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlSga,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:147994,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlSp1,IfcWindow,M_Casement:819mm x 759mm:819mm x 759mm:148607,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlSnC,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:148722,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlS_W,IfcWindow,M_Fixed:2800mm x 2410mm:2800mm x 2410mm:149278,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlS2V,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:149537,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlS1M,IfcWindow,M_Casement:819mm x 759mm:819mm x 759mm:149736,PSet_Revit_Type_Identity Data,Assembly Description,str
+1hOSvn6df7F8_7GcBWlS4Q,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:149924,PSet_Revit_Type_Identity Data,Assembly Description,str
+1l0GAJtRTFv8$zmKJOH4$e,IfcWindow,M_Fixed:2800mm x 2410mm:2800mm x 2410mm:180318,PSet_Revit_Type_Identity Data,Assembly Description,str
+1l0GAJtRTFv8$zmKJOH4u1,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:180663,PSet_Revit_Type_Identity Data,Assembly Description,str
+1l0GAJtRTFv8$zmKJOH4qs,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:180864,PSet_Revit_Type_Identity Data,Assembly Description,str
+1l0GAJtRTFv8$zmKJOH4oq,IfcWindow,M_Casement:819mm x 759mm:819mm x 759mm:180994,PSet_Revit_Type_Identity Data,Assembly Description,str
+1l0GAJtRTFv8$zmKJOH4pU,IfcWindow,M_Fixed:2800mm x 2410mm:2800mm x 2410mm:181096,PSet_Revit_Type_Identity Data,Assembly Description,str
+1l0GAJtRTFv8$zmKJOH4kJ,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:181285,PSet_Revit_Type_Identity Data,Assembly Description,str
+1l0GAJtRTFv8$zmKJOH4gQ,IfcWindow,M_Casement:819mm x 759mm:819mm x 759mm:181548,PSet_Revit_Type_Identity Data,Assembly Description,str
+1l0GAJtRTFv8$zmKJOH4hv,IfcWindow,M_Fixed:819mm x 759mm:819mm x 759mm:181583,PSet_Revit_Type_Identity Data,Assembly Description,str
+1l0GAJtRTFv8$zmKJOH4aS,IfcWindow,M_Fixed:750mm x 2200mm:750mm x 2200mm:181930,PSet_Revit_Type_Identity Data,Assembly Description,str
+1l0GAJtRTFv8$zmKJOH4ZZ,IfcWindow,M_Fixed:750mm x 2200mm:750mm x 2200mm:182101,PSet_Revit_Type_Identity Data,Assembly Description,str
+1Eo2$BaHX42AEkDvQQDocD,IfcWindow,M_Skylight:1180 x 1170mm:1180 x 1170mm:185337,PSet_Revit_Type_Identity Data,Assembly Description,str
+1Eo2$BaHX42AEkDvQQDoy2,IfcWindow,M_Skylight:1180 x 1170mm:1180 x 1170mm:185718,PSet_Revit_Type_Identity Data,Assembly Description,str
+1Eo2$BaHX42AEkDvQQDocD,IfcWindow,M_Skylight:1180 x 1170mm:1180 x 1170mm:185337,PSet_Revit_Type_Identity Data,Type Comments,str
+1Eo2$BaHX42AEkDvQQDoy2,IfcWindow,M_Skylight:1180 x 1170mm:1180 x 1170mm:185718,PSet_Revit_Type_Identity Data,Type Comments,str
