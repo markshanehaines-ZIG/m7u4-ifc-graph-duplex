@@ -1,4 +1,4 @@
-# M7U4 — From IFC to Graph: Data Quality Analysis of the buildingSMART Duplex Apartment Model
+# M7U4 — From IFC to Graph: Data Quality Analysis of the buildingSMART Duplex Apartment Model, with Cross-Model Validation against an MEP Services Dataset
 
 **Module:** M7 — IFC Data Processing, Analysis and Schema Implementation
 **Unit:** M7U4 — From IFC to Dataset / Structuring and Validating Data / From Data to Insight
@@ -10,9 +10,16 @@
 
 ## 1. Executive summary
 
-This submission demonstrates a complete IFC-to-graph workflow against the buildingSMART **Duplex Apartment** reference model (`Duplex_A_20110907.ifc`, IFC2x3, CC-BY-4.0). The model is transformed into a Neo4j property graph using `ifcopenshell` and the official Neo4j Python driver, then interrogated with eight Cypher queries that test the five data quality dimensions introduced in Session 2 of the unit: **Completeness, Consistency, Uniqueness, Validity and Traceability**.
+This submission demonstrates a complete IFC-to-graph workflow validated against two contrasting buildingSMART-class IFC datasets:
 
-The resulting graph contains **16,178 nodes** and **16,102 relationships** covering the full spatial hierarchy, every building element, all property sets and individual properties, type definitions and materials. Across the eight queries the Duplex model proves strong in identity (no duplicate GlobalIds, no unnamed spaces, no doors missing fire rating) but exposes meaningful completeness and validity gaps: 41 elements carry no property sets at all, 452 properties exist as empty placeholders, and 62 values fail validation against a controlled vocabulary.
+1. The **Duplex Apartment** reference model (`Duplex_A_20110907.ifc`, IFC2x3, CC-BY-4.0) — a 268-element architectural model used to develop and verify the schema and queries.
+2. The **NBU MedicalClinic HVAC** model (`NBU_MedicalClinic_Eng-HVAC.ifc`, IFC2x3, TIB DURAARK dataset) — a 3,704-element MEP services model used to validate that the schema, the eight standard data-quality queries, and three new Services-BIM-specific queries (Q9–Q11) generalise beyond architectural data.
+
+Each model is transformed into a Neo4j property graph using `ifcopenshell` and the official Neo4j Python driver. Both datasets live as separate Neo4j databases on the same instance (`neo4j` and `hvac` respectively), with a shared loader module that scales via batched `MERGE` to 190,000+ nodes.
+
+The two graphs together total **209,867 nodes and 216,364 relationships**. Across the eleven queries the comparison surfaces a clear pattern: well-curated public IFCs pass identity checks (uniqueness, named spaces, fire-rated doors where applicable) but consistently fail on completeness and validity — and **MEP services models fail in ways that are invisible to a generic architectural quality audit**, which is the central argument for adopting Services-BIM-specific tooling.
+
+This submission is the work of a practising Services BIM Consultant; the cross-model validation is included because restricting analysis to an architectural reference model alone would leave the central professional question — does the approach work for the discipline I actually deliver? — unanswered.
 
 ---
 
@@ -25,7 +32,7 @@ The graph schema is designed around four principles drawn directly from the lect
 1. **GUID as identity** — every IFC entity that has a `GlobalId` becomes a node keyed by that GUID, enforced by a uniqueness constraint (`element_globalid`). This makes the graph robust to re-loads and aligns with Evelio's statement in Session 1 that "in Neo4j, the GUID will usually become the node identity."
 2. **Relationships as first-class citizens** — IFC's relational entities (`IfcRelContainedInSpatialStructure`, `IfcRelDefinesByProperties`, `IfcRelDefinesByType`, `IfcRelAggregates`, `IfcRelAssociatesMaterial`) are translated into named relationships, not collapsed into element properties. This preserves the graph's traversability.
 3. **Property sets as nodes, not attributes** — instead of flattening every property onto its host element, `:PropertySet` and `:Property` are modelled as their own nodes connected via `[:HAS_PSET]` and `[:HAS_PROPERTY]`. This is the critical design decision that enables Q1 ("elements with no property sets"), Q5 ("properties with empty values") and Q6 ("incompleteness by category") to be expressed as simple Cypher patterns.
-4. **Dual labelling per IFC class** — every element carries both the generic `:Element` label *and* its specific IFC class as a secondary label (e.g. `:Element:IfcDoor`). Generic checks query `:Element`; class-specific checks query `:IfcDoor`. This avoids the choice between a flat schema (lossy) and a fully normalised schema (slow to query).
+4. **Dual labelling per IFC class** — every element carries both the generic `:Element` label *and* its specific IFC class as a secondary label (e.g. `:Element:IfcDoor`, `:Element:IfcFlowTerminal`). Generic checks query `:Element`; class-specific checks query `:IfcDoor` or `:IfcFlowTerminal`. This avoids the choice between a flat schema (lossy) and a fully normalised schema (slow to query).
 
 ### 2.1 Node labels
 
@@ -41,6 +48,7 @@ The graph schema is designed around four principles drawn directly from the lect
 | `:PropertySet` | `IfcPropertySet` instance | `pset_id`, `Name` |
 | `:Property` | individual property within a Pset | `prop_id`, `Name`, `Value`, `DataType`, `IsEmpty` |
 | `:Material` | `IfcMaterial` | `Name` |
+| `:DistributionPort` *(MEP extension)* | `IfcDistributionPort` | `GlobalId`, `Name`, `FlowDirection` |
 
 ### 2.2 Relationship types
 
@@ -51,28 +59,32 @@ The graph schema is designed around four principles drawn directly from the lect
 | `[:HAS_PROPERTY]` | property set → property | derived from `IfcPropertySet.HasProperties` |
 | `[:DEFINED_BY]` | element → type | `IfcRelDefinesByType` |
 | `[:MADE_OF]` | element → material | `IfcRelAssociatesMaterial` |
+| `[:HAS_PORT]` *(MEP extension)* | element → distribution port | `IfcRelConnectsPortToElement` |
+| `[:CONNECTED_TO]` *(MEP extension)* | distribution port → distribution port | `IfcRelConnectsPorts` |
 
-### 2.3 Loaded graph at a glance
+The `:DistributionPort` node label and the `[:HAS_PORT]` / `[:CONNECTED_TO]` relationships are MEP-specific schema extensions activated automatically by the loader when the source IFC contains `IfcDistributionPort` entities. Architectural-only models incur no cost from this extension; the HVAC model gains a complete system-topology layer.
 
-After ETL the database contains:
+### 2.3 Loaded graphs at a glance
 
-| Aspect | Count |
-|---|---|
-| Nodes (total) | 16,178 |
-| Relationships (total) | 16,102 |
-| `:Element` | 268 |
-| `:PropertySet` | 2,388 |
-| `:Property` | 13,455 |
-| `:Storey` | 4 |
-| `:Space` | 21 |
-| `:Material` | 2 |
-| `:HAS_PROPERTY` | 13,455 |
-| `:HAS_PSET` | 2,215 |
-| `:CONTAINS` | 234 |
-| `:DEFINED_BY` | 99 |
-| `:MADE_OF` | 99 |
+The two databases on the same Neo4j instance:
 
-See `screenshots/00_graph_overview.png` for the Neo4j-rendered schema panel and `screenshots/01_spatial_hierarchy.png` for the spatial breakdown.
+| Aspect | Duplex (`neo4j` DB) | HVAC (`hvac` DB) |
+|---|---|---|
+| Nodes (total) | 16,178 | 193,689 |
+| Relationships (total) | 16,102 | 200,262 |
+| `:Element` | 268 | 3,704 |
+| `:PropertySet` | 2,388 | 33,053 |
+| `:Property` | 13,455 | 148,447 |
+| `:DistributionPort` | 0 *(n/a)* | 7,390 |
+| `:Storey` | 4 | 4 |
+| `:Space` | 21 | 263 |
+| `:HAS_PROPERTY` | 13,455 | 148,447 |
+| `:HAS_PSET` | 2,215 | 33,053 |
+| `:CONTAINS` | 234 | 3,973 |
+| `:HAS_PORT` *(MEP)* | 0 | 7,390 |
+| `:CONNECTED_TO` *(MEP)* | 0 | 3,695 |
+
+See `screenshots/00_graph_overview.png` (Duplex schema panel) and `screenshots/03_hvac_database_overview.png` (HVAC schema panel) for the Neo4j-rendered views.
 
 ---
 
@@ -91,41 +103,41 @@ See `screenshots/00_graph_overview.png` for the Neo4j-rendered schema panel and 
 
 This is the **Extract → Transform → Load → Query** pipeline exactly as laid out in Session 1 (Slide: *"The ETL pipeline in construction"*), realised in code rather than diagram.
 
-### 3.2 Steps (see `notebooks/01_extract_and_load.ipynb`)
+### 3.2 ETL stages
 
-1. **Open the IFC** with `ifcopenshell.open()`. The file reports IFC2X3, project name `0001`, 268 elements.
+1. **Open the IFC** with `ifcopenshell.open()`.
 2. **Connect to Neo4j** using credentials loaded from `.env` (`neo4j://127.0.0.1:7687`, user `neo4j`).
-3. **Wipe and constrain** — clear the database with `MATCH (n) DETACH DELETE n`, then create `CREATE CONSTRAINT element_globalid FOR (n:Element) REQUIRE n.GlobalId IS UNIQUE`. The constraint provides both data integrity and a fast index for subsequent `MERGE`s.
-4. **Load the spatial hierarchy** — Project → Site → Building → Storey → Space, traversed via `IfcRelAggregates`. Each node is `MERGE`d on `GlobalId` and `[:CONTAINS]` relationships are created.
+3. **Wipe and constrain** — clear the database with `MATCH (n) DETACH DELETE n`, create the GlobalId uniqueness constraint, and create backing indexes on every keyed property (`PropertySet.pset_id`, `Property.prop_id`, etc.). The indexes are critical: without them, `MERGE` on 148k properties is quadratic and the HVAC load takes hours; with them it takes 17 minutes.
+4. **Load the spatial hierarchy** — Project → Site → Building → Storey → Space, traversed via `IfcRelAggregates`.
 5. **Load elements** — `ifc_file.by_type("IfcElement")` returns every physical element. Each is created with dual labelling (`:Element:IfcXxx`). Storey containment is then resolved via `IfcRelContainedInSpatialStructure`.
-6. **Load property sets and properties** — `ifcopenshell.util.element.get_psets()` is called for each `IfcObject`, abstracting the `IfcRelDefinesByProperties` link. Each property is stored with `Value`, `DataType` and a pre-computed `IsEmpty` flag derived from null or whitespace-only values. This pre-computation moves the cost from query time to load time and makes Q5 a direct lookup.
+6. **Load property sets and properties** in batches of 500 via `UNWIND $batch AS row MERGE ...`. Each property carries a pre-computed `IsEmpty` flag derived from null or whitespace-only values, moving cost from query time to load time.
 7. **Load types and materials** — `IfcRelDefinesByType` and `IfcRelAssociatesMaterial` are walked, with elements linked to their type and material nodes.
-8. **Verify** — node and relationship counts are printed for every label and type to confirm the load is complete.
+8. **Load distribution ports (MEP-only)** — if the IFC contains `IfcDistributionPort` entities, create `:DistributionPort` nodes with `[:HAS_PORT]` and `[:CONNECTED_TO]` edges.
+9. **Verify** — node and relationship counts are printed for every label and type.
 
 The ETL is **idempotent**: re-running the notebook wipes the database first, so the graph can be rebuilt from scratch at any point without orphaned data.
+
+The implementation lives in `notebooks/loader.py` as an `IFCGraphLoader` class. Both the Duplex notebook (`01_extract_and_load.ipynb`) and the HVAC notebook (`03_extract_and_load_hvac.ipynb`) instantiate it with the appropriate `database=` parameter so each graph populates its own Neo4j database without contaminating the other.
 
 ---
 
 ## 4. Data quality queries
 
-Eight queries answer the assignment's prescribed questions, mapped to the five dimensions from Session 2. Each query is stored as a standalone file in `queries/`, results are exported to `results/`, and findings are summarised in §5.
+Eleven queries are executed against each graph (eight standard plus three MEP-specific). Each query is stored as a standalone file in `queries/` (Duplex) and `queries/hvac/` (HVAC), results are exported to `results/` and `results/hvac/` respectively, and findings are summarised in §5.
 
 ### Q1 — Elements with no property sets (Completeness)
 
 ```cypher
 MATCH (e:Element)
 WHERE NOT (e)-[:HAS_PSET]->()
-RETURN e.GlobalId AS GlobalId,
-       e.IfcClass AS IfcClass,
-       e.Name     AS Name,
-       e.Tag      AS Tag
+RETURN e.GlobalId AS GlobalId, e.IfcClass AS IfcClass,
+       e.Name AS Name, e.Tag AS Tag
 ORDER BY e.IfcClass, e.Name
 ```
 
 - **Dimension:** Completeness
-- **Nodes / relationships involved:** `:Element` nodes; negation of `[:HAS_PSET]`
-- **Returns:** GUID, IFC class, name and tag of every element that has zero outgoing `[:HAS_PSET]` relationships
-- **Interpretation:** an element with no property sets is a geometric placeholder with no semantic metadata. It cannot support cost estimation, energy analysis, fire compliance or facility management handover. The count alone is a baseline completeness KPI for the model. *Result: 41 elements, ~15% of the model.*
+- **Returns:** every element with zero outgoing `[:HAS_PSET]` relationships
+- **Interpretation:** an element with no property sets is a geometric placeholder with no semantic metadata. It cannot support cost estimation, energy analysis, fire compliance or facility management handover.
 
 ### Q2 — Doors without a FireRating (Completeness / compliance-critical)
 
@@ -134,74 +146,61 @@ MATCH (d:Element:IfcDoor)
 OPTIONAL MATCH (d)-[:HAS_PSET]->(:PropertySet)-[:HAS_PROPERTY]->(p:Property {Name: 'FireRating'})
 WITH d, p
 WHERE p IS NULL OR p.IsEmpty = true
-RETURN d.GlobalId AS GlobalId,
-       d.Name     AS DoorName,
-       d.Tag      AS Tag,
+RETURN d.GlobalId AS GlobalId, d.Name AS DoorName, d.Tag AS Tag,
        CASE WHEN p IS NULL THEN 'Missing' ELSE 'Empty' END AS FireRatingStatus,
-       p.Value    AS RawValue
+       p.Value AS RawValue
 ORDER BY FireRatingStatus, d.Name
 ```
 
 - **Dimension:** Completeness (compliance-critical)
-- **Nodes / relationships involved:** `:IfcDoor`, `[:HAS_PSET]`, `:PropertySet`, `[:HAS_PROPERTY]`, `:Property`
-- **Returns:** any door where the `FireRating` property is either absent (status `Missing`) or present but empty (status `Empty`)
-- **Interpretation:** doors without fire rating data fail Building Regulations Part B (UK) and equivalent compartmentation checks under the Building Safety Act 2022 Golden Thread. The split between Missing and Empty is important — *empty* indicates the export emitted the placeholder without populating it (the "illusion of structured data" pattern). *Result: 0 doors. All 14 doors in the Duplex model carry a populated FireRating.*
+- **Returns:** any door where `FireRating` is absent or empty
+- **Interpretation:** doors without fire rating data fail Building Regulations Part B (UK) and equivalent compartmentation checks under the Building Safety Act 2022 Golden Thread.
 
 ### Q3 — Elements not assigned to any storey (Consistency / spatial integrity)
 
 ```cypher
 MATCH (e:Element)
-WHERE NOT EXISTS {
-  MATCH (:Storey)-[:CONTAINS]->(e)
-}
-RETURN e.GlobalId AS GlobalId,
-       e.IfcClass AS IfcClass,
-       e.Name     AS Name,
-       e.Tag      AS Tag
+WHERE NOT EXISTS { MATCH (:Storey)-[:CONTAINS]->(e) }
+RETURN e.GlobalId AS GlobalId, e.IfcClass AS IfcClass,
+       e.Name AS Name, e.Tag AS Tag
 ORDER BY e.IfcClass
 ```
 
 - **Dimension:** Consistency (spatial integrity)
-- **Nodes / relationships involved:** `:Element`, `:Storey`, `[:CONTAINS]`
 - **Returns:** every element with no incoming `[:CONTAINS]` from a `:Storey`
-- **Interpretation:** orphaned elements break automated quantity take-offs, energy simulations and storey-based dashboards. **However, this query exposes a known false-positive class**: `IfcOpeningElement` instances (doors, windows, structural openings) are spatially "voided" into their host wall via `IfcRelVoidsElement`, not contained by a storey via `IfcRelContainedInSpatialStructure`. The 50 openings appearing here are technically correct in the IFC model but would mislead a naive completeness audit — a reminder that *consistency rules must be class-aware*. *Result: 122 elements; of those approximately 50 are IfcOpeningElements (legitimate false positives), leaving ~72 elements that warrant investigation.*
+- **Interpretation:** orphaned elements break automated quantity take-offs, energy simulations and storey-based dashboards. Note: `IfcOpeningElement` instances are spatially "voided" into their host wall via `IfcRelVoidsElement` rather than contained by a storey — they appear as legitimate false positives, illustrating that consistency rules must be class-aware.
 
 ### Q4 — Spaces with no name or number (Completeness / identity)
 
 ```cypher
 MATCH (s:Space)
-WHERE s.Name IS NULL     OR trim(s.Name) = ''
+WHERE s.Name IS NULL OR trim(s.Name) = ''
    OR s.LongName IS NULL OR trim(s.LongName) = ''
-RETURN s.GlobalId                              AS GlobalId,
-       coalesce(s.Name, '<MISSING>')           AS RoomNumber,
-       coalesce(s.LongName, '<MISSING>')       AS RoomName,
-       s.Description                           AS Description
+RETURN s.GlobalId AS GlobalId,
+       coalesce(s.Name, '<MISSING>') AS RoomNumber,
+       coalesce(s.LongName, '<MISSING>') AS RoomName,
+       s.Description AS Description
 ORDER BY s.GlobalId
 ```
 
 - **Dimension:** Completeness (identity)
-- **Nodes / relationships involved:** `:Space`
-- **Returns:** any `:Space` whose `Name` (room number) or `LongName` (room name) is null or whitespace-only
-- **Interpretation:** a space without a name or number cannot be referenced in area schedules, FM software or COBie handover. *Result: 0 spaces. All 21 spaces in the Duplex model have both Name and LongName populated.*
+- **Returns:** any `:Space` whose `Name` or `LongName` is null or whitespace-only
+- **Interpretation:** a space without identity cannot be referenced in area schedules, FM software or COBie handover.
 
 ### Q5 — Properties present but empty (Completeness / illusion of structure)
 
 ```cypher
 MATCH (e:Element)-[:HAS_PSET]->(ps:PropertySet)-[:HAS_PROPERTY]->(p:Property)
 WHERE p.IsEmpty = true
-RETURN e.GlobalId AS ElementGlobalId,
-       e.IfcClass AS IfcClass,
-       e.Name     AS ElementName,
-       ps.Name    AS PropertySet,
-       p.Name     AS PropertyName,
-       p.DataType AS DataType
+RETURN e.GlobalId AS ElementGlobalId, e.IfcClass AS IfcClass,
+       e.Name AS ElementName, ps.Name AS PropertySet,
+       p.Name AS PropertyName, p.DataType AS DataType
 ORDER BY e.IfcClass, ps.Name, p.Name
 ```
 
-- **Dimension:** Completeness — specifically the failure mode Session 2 calls *"the illusion of structured data"*
-- **Nodes / relationships involved:** `:Element`, `:PropertySet`, `:Property`; pre-computed `IsEmpty` flag
-- **Returns:** every property whose `Value` is null or whitespace-only, with full context (host element, host Pset, property name and data type)
-- **Interpretation:** an empty property is worse than a missing one because automated audits that count Psets see them as present. The 452 empty values across 13,455 total properties (3.4%) are not catastrophic but they cluster in specific Psets — visible in Q6's aggregation — pointing to which export settings to revisit. *Result: 452 properties.*
+- **Dimension:** Completeness — the "illusion of structured data" failure mode
+- **Returns:** every property whose `Value` is null or whitespace-only
+- **Interpretation:** an empty property is worse than a missing one because automated audits that count Psets see them as present.
 
 ### Q6 — Incompleteness ranked by IFC category (Completeness, aggregated)
 
@@ -211,7 +210,6 @@ OPTIONAL MATCH (e)-[:HAS_PSET]->(:PropertySet)-[:HAS_PROPERTY]->(p:Property)
 WITH e.IfcClass AS Category, e, p
 WITH Category,
      count(DISTINCT e) AS TotalElements,
-     sum(CASE WHEN p IS NULL THEN 1 ELSE 0 END) AS ElementsNoProperties,
      count(p) AS TotalProperties,
      sum(CASE WHEN p.IsEmpty = true THEN 1 ELSE 0 END) AS EmptyProperties
 RETURN Category, TotalElements, TotalProperties, EmptyProperties,
@@ -221,100 +219,187 @@ RETURN Category, TotalElements, TotalProperties, EmptyProperties,
 ORDER BY EmptyProperties DESC, EmptyRatio DESC
 ```
 
-- **Dimension:** Completeness — aggregated for prioritisation
-- **Nodes / relationships involved:** the full element-to-property chain, aggregated by `IfcClass`
-- **Returns:** for each IFC category, total elements, total property count, empty property count, and the empty ratio
-- **Interpretation:** turns Q1 and Q5 into a remediation backlog. The categories at the top of this table are where data-quality investment yields the largest payoff. For the Duplex model the heaviest absolute counts will sit with `IfcWallStandardCase`, `IfcFurnishingElement` and `IfcCovering`. *Result: 15 categories ranked; see `results/Q6_incompleteness_by_category.csv`.*
+- **Dimension:** Completeness, aggregated for prioritisation
+- **Returns:** for each IFC category, total elements, total properties, empty properties, and the empty ratio
+- **Interpretation:** turns Q1 and Q5 into a remediation backlog.
 
 ### Q7 — Duplicate identifiers and names (Uniqueness)
 
-The assignment combines GlobalId, name and classification code uniqueness into one question. Classification codes are not present in the Duplex model (no `IfcClassification` references), so this is reported as two sub-queries.
-
-```cypher
-// Q7a — GlobalId uniqueness
-MATCH (e:Element)
-WITH e.GlobalId AS GlobalId, count(*) AS Occurrences, collect(e.IfcClass) AS Classes
-WHERE Occurrences > 1
-RETURN GlobalId, Occurrences, Classes
-```
-
-```cypher
-// Q7b — Shared Name within IFC class
-MATCH (e:Element)
-WHERE e.Name IS NOT NULL AND trim(e.Name) <> ''
-WITH e.IfcClass AS IfcClass, e.Name AS Name,
-     count(*) AS Occurrences, collect(e.GlobalId)[..5] AS SampleGlobalIds
-WHERE Occurrences > 1
-RETURN IfcClass, Name, Occurrences, SampleGlobalIds
-ORDER BY Occurrences DESC, IfcClass, Name
-```
-
-- **Dimension:** Uniqueness
-- **Nodes / relationships involved:** `:Element`
-- **Returns:** Q7a — any GlobalId that occurs more than once (should be zero by IFC specification and is doubly enforced by our database constraint). Q7b — any `(IfcClass, Name)` combination shared by multiple elements; not an error per se, but a signal of weak individual identification.
-- **Interpretation:** Q7a tests whether the source model and our load process respect the IFC uniqueness contract. Q7b tests whether elements are individually identifiable for FM and asset management. *Result: 0 duplicate GlobalIds, 0 shared Name+IfcClass combinations. The Duplex model is exemplary on uniqueness — likely because its source author named instances explicitly rather than relying on default Revit family-instance names.*
+Two sub-queries on GlobalId uniqueness (Q7a) and Name+IfcClass uniqueness (Q7b). See `queries/Q7a_*.cypher` and `queries/Q7b_*.cypher`.
 
 ### Q8 — Property values outside the permitted set (Validity)
 
-```cypher
-MATCH (e:Element)-[:HAS_PSET]->(:PropertySet)-[:HAS_PROPERTY]->(p:Property)
-WHERE p.IsEmpty = false
-  AND (
-    (p.Name = 'FireRating'
-       AND NOT p.Value IN ['30','60','90','120','180','240',
-                           'FD30','FD60','FD90','FD120','FD180','FD240'])
-    OR
-    (p.Name = 'IsExternal'
-       AND NOT toLower(p.Value) IN ['true','false'])
-  )
-RETURN e.GlobalId AS ElementGlobalId,
-       e.IfcClass AS IfcClass,
-       e.Name     AS ElementName,
-       p.Name     AS PropertyName,
-       p.Value    AS RawValue,
-       p.DataType AS DataType
-ORDER BY p.Name, p.Value
+Tests `FireRating` and `IsExternal` against controlled vocabularies. See `queries/Q8_*.cypher`.
+
+---
+
+## 4.1 Cross-model validation against an MEP services dataset
+
+The eight queries above were developed against the architectural Duplex Apartment model. To verify the approach generalises beyond architecture — and to align the analysis with the author's professional domain as a Services BIM Consultant — the schema and queries were re-applied to a real HVAC services model.
+
+### 4.1.1 The HVAC dataset
+
+The **NBU_MedicalClinic_Eng-HVAC.ifc** model is part of the **DURAARK** project's open dataset, hosted by the **Technische Informationsbibliothek (TIB) Hannover**:
+
+```
+https://tib.eu/data/duraark/BuildingData/01_IFC/NBU_MedicalClinic_ifc.zip
 ```
 
-- **Dimension:** Validity (controlled vocabulary)
-- **Nodes / relationships involved:** `:Element`, `:PropertySet`, `:Property`
-- **Returns:** any non-empty property whose value falls outside the permitted vocabulary for its name. Two vocabularies are tested:
-  - `FireRating` — UK convention (numeric minutes or `FDxx` codes)
-  - `IsExternal` — boolean (`true` / `false`, case-insensitive)
-- **Interpretation:** validity failures are the most insidious data quality problem because the value exists, looks plausible to a human reader, and silently breaks any downstream automation that expects a controlled token. The 62 failures here are predominantly `IsExternal` values stored as `T`/`F` or `0`/`1` — common Revit-export artifacts that confound IDS validation and bsDD-linked checking. *Result: 62 values.*
+The zip contains five discipline-separated IFC files from the same medical clinic project (architectural, MEP, HVAC, electrical, structural). The HVAC file alone is 27 MB and contains 3,704 services elements across six MEP IFC classes:
+
+| IFC class | Count | Role |
+|---|---|---|
+| IfcFlowFitting | 1,590 | Duct fittings, transitions, elbows |
+| IfcFlowSegment | 1,548 | Duct runs |
+| IfcFlowTerminal | 440 | Air diffusers, grilles, registers |
+| IfcFlowController | 115 | Dampers, VAVs, valves |
+| IfcFlowMovingDevice | 8 | Fans, AHUs |
+| IfcEnergyConversionDevice | 3 | Heat-exchange equipment |
+
+The model also contains **7,390 IfcDistributionPort instances** with **3,695 IfcRelConnectsPorts** relationships — that is, every duct end is captured as a port and the port-to-port connections define the actual flow topology of the HVAC system.
+
+### 4.1.2 Schema extensions for MEP
+
+To handle this content, the loader was extended with three additions, activated automatically when the source IFC contains `IfcDistributionPort` entities:
+
+- A new node label `:DistributionPort` with `GlobalId`, `Name` and `FlowDirection` properties
+- A `[:HAS_PORT]` relationship from `:Element` to its `:DistributionPort` nodes (one element typically has 2 ports — inlet and outlet)
+- A `[:CONNECTED_TO]` relationship between connected `:DistributionPort` nodes, capturing the system topology
+
+Architectural models are unaffected — when an IFC contains no `IfcDistributionPort` entities the extension is a no-op.
+
+`screenshots/05_hvac_system_topology.png` shows a connected duct chain rendered from the HVAC graph: 96 nodes (46 elements + 50 ports) linked by 75 relationships (50 `HAS_PORT` + 25 `CONNECTED_TO`). Walking from an air terminal to its upstream AHU through the port topology is now a single Cypher traversal.
+
+### 4.1.3 MEP-specific data quality queries
+
+Three new queries were added specifically for Services BIM data validation. These would not surface meaningful results in an architectural model — they target patterns unique to MEP discipline.
+
+#### Q9 — Flow terminals without a flow-rate property (Completeness, MEP)
+
+```cypher
+MATCH (e:Element:IfcFlowTerminal)
+WHERE NOT EXISTS {
+  MATCH (e)-[:HAS_PSET]->(:PropertySet)-[:HAS_PROPERTY]->(p:Property)
+  WHERE p.IsEmpty = false
+    AND p.Name IN ['NominalAirflowRate','AirflowRate','FlowRate','NominalFlowRate']
+}
+RETURN e.GlobalId AS GlobalId, e.IfcClass AS IfcClass,
+       e.Name AS Name, e.Tag AS Tag
+ORDER BY e.Name
+```
+
+- **Dimension:** Completeness (Services-BIM-specific)
+- **Returns:** every flow terminal lacking a populated airflow-rate property
+- **Interpretation:** an air diffuser without a flow rate cannot be used in commissioning, balancing reports or energy simulations.
+
+#### Q10 — Flow elements without IfcDistributionSystem assignment (Consistency, MEP)
+
+```cypher
+MATCH (e:Element)
+WHERE e.IfcClass IN ['IfcFlowSegment','IfcFlowFitting','IfcFlowTerminal',
+                     'IfcFlowController','IfcFlowMovingDevice',
+                     'IfcEnergyConversionDevice']
+RETURN e.IfcClass AS IfcClass, count(*) AS UnassignedCount
+ORDER BY UnassignedCount DESC
+```
+
+- **Dimension:** Consistency (Services-BIM-specific)
+- **Returns:** flow element counts per class — the HVAC model contains zero `IfcDistributionSystem` instances, so every flow element is unassigned by definition
+- **Interpretation:** a coordinated MEP model should group elements into named distribution systems (Supply Air, Return Air, Exhaust, Chilled Water, etc.). Without that grouping, system-based maintenance and commissioning workflows fail.
+
+#### Q11 — Flow segments missing nominal diameter (Completeness, MEP)
+
+```cypher
+MATCH (e:Element)
+WHERE e.IfcClass IN ['IfcFlowSegment','IfcFlowFitting']
+  AND NOT EXISTS {
+    MATCH (e)-[:HAS_PSET]->(:PropertySet)-[:HAS_PROPERTY]->(p:Property)
+    WHERE p.IsEmpty = false
+      AND p.Name IN ['NominalDiameter','OuterDiameter','InnerDiameter',
+                     'NominalWidth','NominalHeight','Width','Height']
+  }
+RETURN e.IfcClass AS IfcClass, count(*) AS SegmentsMissingDiameter
+ORDER BY SegmentsMissingDiameter DESC
+```
+
+- **Dimension:** Completeness (Services-BIM-specific)
+- **Returns:** counts of flow segments/fittings missing dimensional properties
+- **Interpretation:** without dimensional data, pressure-drop calculations, flow-balance analysis and bills of quantities cannot be derived from the model.
+
+### 4.1.4 Comparative findings
+
+Eleven queries × two models = 22 result sets, summarised below.
+
+| # | Question | Dimension | Duplex (Architectural) | HVAC (Services) |
+|---|---|---|---|---|
+| Q1 | Elements with no property sets | Completeness | **41** (≈15% of 268) | **0** |
+| Q2 | Doors missing FireRating | Completeness (compliance) | **0** | **0** *(no doors in this discipline file)* |
+| Q3 | Elements not in any storey | Consistency (spatial) | **122** (≈46%) | **2,114** (≈57%) |
+| Q4 | Spaces missing name/number | Completeness (identity) | **0** | **0** |
+| Q5 | Properties with empty values | Completeness | **452** (3.4% of 13,455) | **10,729** (7.2% of 148,447) |
+| Q6 | Incompleteness by category | Completeness (agg.) | 15 categories | 6 categories |
+| Q7a | Duplicate GlobalIds | Uniqueness | **0** | **0** |
+| Q7b | Shared Names within class | Uniqueness | **0** | **0** |
+| Q8 | Values outside permitted set | Validity | **62** | **0** *(no FireRating / IsExternal in scope)* |
+| Q9 | Flow terminals missing flow rate | Completeness (MEP) | n/a | **440** (100% of all flow terminals) |
+| Q10 | Flow elements without DistributionSystem | Consistency (MEP) | n/a | **3,704** (100% of flow elements; 0 systems defined) |
+| Q11 | Flow segments missing diameter | Completeness (MEP) | n/a | 2 classes with missing dimensions |
+
+### 4.1.5 Interpretation
+
+Three patterns stand out from the comparison.
+
+**Identity is universally strong.** Both models pass Q1, Q4 and Q7 — every space named, every GlobalId unique, no name collisions. This reflects the public-curation effort behind both reference datasets; real-world IFCs rarely look this clean.
+
+**Spatial consistency is universally fragile.** Q3 fails in both models — 46% of architectural elements and 57% of services elements are not assigned to a storey. While part of the architectural figure is the legitimate `IfcOpeningElement` false-positive class, no equivalent excuse exists for HVAC. The pattern suggests that storey assignment in BIM authoring tools is fundamentally unreliable, and any consistency-checking rule used in production must be class-aware.
+
+**MEP services data fails in MEP-specific ways that a generic audit cannot detect.** Q1 reports zero pset-less elements in the HVAC model — by a naïve audit, the HVAC export looks *more complete* than the Duplex. Q9–Q11 reverse that picture entirely: 100% of flow terminals lack flow rates, 100% of flow elements lack distribution-system assignments, and segments lack diameters. The model passes the architectural completeness tests but fails every Services-specific commissioning requirement. **This is the central technical argument for adopting domain-specific data quality tooling**: generic IDS templates and quality dashboards built around `Pset_WallCommon` or `Pset_DoorCommon` will pass an MEP model that no Services engineer would accept.
+
+The validity result on Q8 (zero failures) is also informative. The controlled vocabularies tested (`FireRating`, `IsExternal`) are not present in the HVAC model, so the rule does not engage. For a complete MEP validation regime the equivalent controlled vocabularies — `FlowDirection` ∈ {`SOURCE`, `SINK`, `SOURCEANDSINK`}, system classification codes, refrigerant types — would need to be added. These are out of scope for this submission but are an obvious next-development step.
 
 ---
 
 ## 5. Summary of findings
 
-| # | Question | Dimension | Findings |
-|---|---|---|---|
-| Q1 | Elements with no property sets | Completeness | **41** elements (≈15%) |
-| Q2 | Doors missing FireRating | Completeness (compliance) | **0** — strong pass |
-| Q3 | Elements not in any storey | Consistency (spatial) | **122** raw, ~72 after IfcOpeningElement filter |
-| Q4 | Spaces missing name/number | Completeness (identity) | **0** — strong pass |
-| Q5 | Properties with empty values | Completeness | **452** properties (3.4% of all properties) |
-| Q6 | Incompleteness by category | Completeness (agg.) | **15** categories ranked |
-| Q7a | Duplicate GlobalIds | Uniqueness | **0** — strong pass |
-| Q7b | Shared Name within IFC class | Uniqueness | **0** — strong pass |
-| Q8 | Values outside permitted set | Validity | **62** failures (predominantly IsExternal) |
+### 5.1 Combined-model summary
 
-### 5.1 What the model does well
+| # | Question | Dimension | Duplex | HVAC |
+|---|---|---|---|---|
+| Q1 | Elements with no property sets | Completeness | 41 | 0 |
+| Q2 | Doors missing FireRating | Completeness (compliance) | 0 | 0 |
+| Q3 | Elements not in any storey | Consistency (spatial) | 122 | 2,114 |
+| Q4 | Spaces missing name/number | Completeness (identity) | 0 | 0 |
+| Q5 | Properties with empty values | Completeness | 452 | 10,729 |
+| Q6 | Incompleteness by category | Completeness (agg.) | 15 ranked | 6 ranked |
+| Q7 | Duplicate identifiers/names | Uniqueness | 0 \| 0 | 0 \| 0 |
+| Q8 | Values outside permitted set | Validity | 62 | 0 |
+| Q9 | Flow terminals missing flow rate | Completeness (MEP) | n/a | 440 |
+| Q10 | Flow elements not in a DistributionSystem | Consistency (MEP) | n/a | 3,704 |
+| Q11 | Flow segments missing diameter | Completeness (MEP) | n/a | 2 classes |
 
-- **Identity** is excellent: every space named, every door fire-rated, no duplicate GUIDs, no name collisions
-- **Spatial hierarchy** is clean for properly-contained elements
-- **Property set coverage** is broad — 2,388 Pset instances across 268 elements averages ~9 Psets per element
+### 5.2 What both models do well
 
-### 5.2 What the model does poorly
+- **Identity dimensions** are excellent in both: every space named, no duplicate GUIDs, no name collisions
+- **Uniqueness** is robust: no duplicate global identifiers in either model
+- **Property set coverage** is broad in both — the HVAC model averages ~9 Psets per element and the Duplex averages ~9 Psets per element
 
-- **15% of elements (41) have no property sets at all** — primarily structural and finish elements
-- **Empty property values number 452** — concentrated in a small number of Psets per Q6
-- **Validity of boolean-like fields is weak** — 62 `IsExternal` values fail a strict true/false check
-- **Spatial containment rules need class-aware refinement** — naive checks misclassify 50 `IfcOpeningElement` instances as orphans
+### 5.3 Where the models diverge
 
-### 5.3 Wider implication
+- **Q1 inverts**: the HVAC model is *better* on raw completeness (0 pset-less elements vs. the Duplex's 41). A generic completeness audit would rank the HVAC model as the higher-quality dataset
+- **Q3 is worse for HVAC** in both absolute (2,114 vs. 122) and proportional (57% vs. 46%) terms — MEP elements are more frequently unmoored from the spatial hierarchy
+- **Q5 is roughly twice as bad** in proportional terms for the HVAC model (7.2% empty vs. 3.4%) — services exports carry more placeholder Psets
 
-The Duplex model is *better* than most real-world IFC exports in identity and structure, but still fails on the same two patterns that dominate real BIM data: **placeholder Psets without populated values** and **validity drift in controlled-vocabulary fields**. The data quality dimensions from Session 2 (Completeness, Consistency, Uniqueness, Validity, Traceability) are not theoretical — every one of them surfaces in this single 2.3 MB reference model. A graph-based approach lets each of these failures be expressed as a one-screen Cypher pattern, which is the central thesis of the unit: *IFC is no longer just a 3D model; it is data infrastructure.*
+### 5.4 Implications for Services BIM
+
+The MEP-specific Q9–Q11 expose failures that the standard architectural audit cannot see:
+
+- **Q9**: every air terminal lacks a populated flow rate — invisible to any check based on `Pset_WallCommon`, `Pset_DoorCommon` or other architectural property sets
+- **Q10**: zero `IfcDistributionSystem` entities — invisible to any check that does not specifically look for distribution systems
+- **Q11**: some flow elements lack dimensional properties — invisible to any check that does not search the MEP-specific dimensional property names
+
+Generic completeness scoring would rate the HVAC model as 100% compliant on Pset coverage. Services BIM practice requires the discipline-aware extensions developed in §4.1 to detect the failures that matter for commissioning, FM handover and design coordination.
+
+This is the practical justification for treating Services BIM data quality as its own discipline rather than a sub-case of architectural data quality.
 
 ---
 
@@ -326,16 +411,26 @@ m7u4-ifc-graph/
 ├── LICENSE                             ← MIT
 ├── .env.example                        ← template (real .env is gitignored)
 ├── ifc/
-│   └── Duplex_A_20110907.ifc           ← source model (CC-BY-4.0, buildingSMART)
+│   ├── Duplex_A_20110907.ifc           ← architectural source (CC-BY-4.0, buildingSMART)
+│   └── NBU_MedicalClinic_Eng-HVAC.ifc  ← HVAC source (TIB DURAARK, downloaded externally)
 ├── notebooks/
-│   ├── 01_extract_and_load.ipynb       ← ETL pipeline
-│   └── 02_data_quality_queries.ipynb   ← all eight queries with explanations
-├── queries/                            ← standalone .cypher files (Q1–Q8)
-├── results/                            ← CSV export of every query
-├── screenshots/                        ← Neo4j Browser captures
-│   ├── 00_graph_overview.png
-│   ├── 01_spatial_hierarchy.png
-│   └── 02_door_with_properties.png
+│   ├── loader.py                       ← shared batched-MERGE loader with MEP extension
+│   ├── 01_extract_and_load.ipynb       ← Duplex ETL
+│   ├── 02_data_quality_queries.ipynb   ← eight queries vs. Duplex
+│   ├── 02b_data_quality_queries_hvac.ipynb  ← eleven queries vs. HVAC
+│   └── 03_extract_and_load_hvac.ipynb  ← HVAC ETL (uses loader.py)
+├── queries/                            ← Cypher files (Duplex set)
+│   └── hvac/                           ← Cypher files (HVAC set, includes Q9–Q11)
+├── results/                            ← CSV exports (Duplex set)
+│   └── hvac/                           ← CSV exports (HVAC set)
+├── screenshots/
+│   ├── 00_graph_overview.png           ← Duplex schema panel
+│   ├── 01_spatial_hierarchy.png        ← Duplex spatial chain
+│   ├── 02_door_with_properties.png     ← Duplex door + Psets + properties
+│   ├── 03_hvac_database_overview.png   ← HVAC schema panel
+│   ├── 04_hvac_air_terminal.png        ← HVAC air terminal + Psets + ports
+│   ├── 05_hvac_system_topology.png     ← HVAC connected duct chain (port topology)
+│   └── 06_hvac_air_terminal_detail.png ← HVAC flow terminals with Node Details
 └── docs/
     └── graph_schema.svg                ← graph model diagram (embedded in §2)
 ```
@@ -349,10 +444,28 @@ python -m venv venv
 source venv/Scripts/activate   # Windows Git Bash; use venv/bin/activate on macOS/Linux
 pip install ifcopenshell neo4j pandas python-dotenv jupyter ipykernel
 cp .env.example .env           # then edit with your Neo4j credentials
+```
+
+The Duplex IFC is included in the repo. The HVAC IFC is not — it is 27 MB and part of a 320 MB academic dataset, redistributable but too large to commit. Download the HVAC source from:
+
+```
+https://tib.eu/data/duraark/BuildingData/01_IFC/NBU_MedicalClinic_ifc.zip
+```
+
+Extract only `NBU_MedicalClinic_Eng-HVAC.ifc` into `ifc/`.
+
+Then in Neo4j Desktop create a second database called `hvac` alongside the default `neo4j` database (one click — Create database).
+
+```bash
 jupyter notebook
 ```
 
-Run `01_extract_and_load.ipynb` end-to-end to populate the graph, then `02_data_quality_queries.ipynb` to regenerate the eight query results and CSV exports.
+Run the notebooks in this order:
+
+1. `01_extract_and_load.ipynb` — populates the Duplex graph in the `neo4j` database
+2. `02_data_quality_queries.ipynb` — runs the eight queries vs. Duplex, writes to `results/`
+3. `03_extract_and_load_hvac.ipynb` — populates the HVAC graph in the `hvac` database
+4. `02b_data_quality_queries_hvac.ipynb` — runs the eleven queries vs. HVAC, writes to `results/hvac/`
 
 ---
 
@@ -361,6 +474,7 @@ Run `01_extract_and_load.ipynb` end-to-end to populate the graph, then `02_data_
 - ISO 16739-1:2024 — Industry Foundation Classes
 - ISO 19650-1/2 — Information management using BIM
 - buildingSMART Sample Test Files (CC-BY-4.0)
+- DURAARK project (FP7 EU-funded research), hosted at TIB Hannover
 - Lecture material: M7U4 Sessions 1–4, Evelio Sánchez Juncal, Zigurat
 
 ---
