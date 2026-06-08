@@ -1,0 +1,12 @@
+Question,Dimension,Issue,HVAC Findings
+Q1,Completeness,Elements with no property sets,0
+Q2,Completeness (compliance),Doors missing FireRating,0
+Q3,Consistency (spatial),Elements not in any storey,2114
+Q4,Completeness (ID),Spaces missing name/number,0
+Q5,Completeness,Properties with empty values,10729
+Q6,Completeness (agg.),Incompleteness ranked by category,6 categories ranked
+Q7,Uniqueness,Duplicate GlobalIds | shared Names,0 | 0
+Q8,Validity,Values outside permitted set,0
+Q9,Completeness (MEP),Flow terminals missing flow rate,440
+Q10,Consistency (MEP),Flow elements without DistributionSystem,6 classes (no systems defined)
+Q11,Completeness (MEP),Flow segments missing diameter,2 classes ranked

@@ -1,0 +1,7 @@
+Category,TotalElements,TotalProperties,EmptyProperties,EmptyRatio
+IfcFlowFitting,1590,61448,5275,0.086
+IfcFlowSegment,1548,53253,4683,0.088
+IfcFlowTerminal,440,26379,440,0.017
+IfcFlowController,115,2914,309,0.106
+IfcFlowMovingDevice,8,520,16,0.031
+IfcEnergyConversionDevice,3,200,6,0.03
