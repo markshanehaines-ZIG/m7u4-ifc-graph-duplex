@@ -49,7 +49,9 @@ This submission is the work of a practising Services BIM Consultant; the cross-m
 
 ## 2. Graph model — definition and rationale
 
-![M7U4 graph schema](docs/graph_schema.svg)
+![M7U4 graph schema](docs/graph_schema.png)
+
+*Figure 1 — Property graph schema for the IFC-to-Neo4j transformation.*
 
 The graph schema is designed around four principles drawn directly from the lecture material:
 
@@ -110,6 +112,14 @@ The two databases on the same Neo4j instance:
 
 See `screenshots/00_graph_overview.png` (Duplex schema panel) and `screenshots/03_hvac_database_overview.png` (HVAC schema panel) for the Neo4j-rendered views.
 
+![Duplex schema panel — 16,178 nodes, 16,102 relationships](screenshots/00_graph_overview.png)
+
+*Figure 2 — Duplex graph in Neo4j Desktop, confirming node and relationship counts reported in the table above.*
+
+![HVAC schema panel — 193,689 nodes, 200,262 relationships](screenshots/03_hvac_database_overview.png)
+
+*Figure 3 — HVAC graph in Neo4j Desktop, confirming the scale of the MEP services dataset.*
+
 ---
 
 ## 3. IFC-to-graph transformation process
@@ -142,6 +152,14 @@ This is the **Extract → Transform → Load → Query** pipeline exactly as lai
 The ETL is **idempotent**: re-running the notebook wipes the database first, so the graph can be rebuilt from scratch at any point without orphaned data.
 
 The implementation lives in `notebooks/loader.py` as an `IFCGraphLoader` class. Both the Duplex notebook (`01_extract_and_load.ipynb`) and the HVAC notebook (`03_extract_and_load_hvac.ipynb`) instantiate it with the appropriate `database=` parameter so each graph populates its own Neo4j database without contaminating the other.
+
+![Duplex spatial hierarchy](screenshots/01_spatial_hierarchy.png)
+
+*Figure 4 — Spatial hierarchy traversal in the Duplex graph: Project → Site → Building → 4 Storeys (T/FDN, Level 1, Level 2, Roof). Evidence of correct loading at ETL stage 4.*
+
+![Door with property sets and properties](screenshots/02_door_with_properties.png)
+
+*Figure 5 — A single `:IfcDoor` element (pink) linked to 9 `:PropertySet` nodes (green) and 30 `:Property` nodes (orange). Evidence of correct property-set loading at ETL stage 6 and validation of the design choice in §2 to model property sets as first-class nodes.*
 
 ---
 
@@ -294,7 +312,19 @@ Architectural models are unaffected — when an IFC contains no `IfcDistribution
 
 `screenshots/05_hvac_system_topology.png` shows a connected duct chain rendered from the HVAC graph: 96 nodes (46 elements + 50 ports) linked by 75 relationships (50 `HAS_PORT` + 25 `CONNECTED_TO`). Walking from an air terminal to its upstream AHU through the port topology is now a single Cypher traversal.
 
+![HVAC system topology — connected duct chain](screenshots/05_hvac_system_topology.png)
+
+*Figure 6 — Connected HVAC duct chain visualised in Neo4j. The port-to-port topology (CONNECTED_TO relationships) makes system traversal a single Cypher path query rather than a multi-hop geometric inference.*
+
 ### 4.1.3 MEP-specific data quality queries
+
+![HVAC air terminal with property sets and distribution ports](screenshots/04_hvac_air_terminal.png)
+
+*Figure 7 — A single HVAC air terminal element showing its property sets and the two distribution ports (`:DistributionPort`) connecting it into the system topology. Evidence of the MEP schema extension working as designed.*
+
+![HVAC air terminal node detail](screenshots/06_hvac_air_terminal_detail.png)
+
+*Figure 8 — Neo4j Node Details panel for an `:IfcFlowTerminal` element. Q9 detects exactly this pattern: flow terminals with property sets present but no populated airflow-rate property — the empty-property failure mode that a Pset-count audit cannot see.*
 
 Three new queries were added specifically for Services BIM data validation. These would not surface meaningful results in an architectural model — they target patterns unique to MEP discipline.
 
