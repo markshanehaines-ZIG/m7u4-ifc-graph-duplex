@@ -8,6 +8,30 @@
 
 ---
 
+## Reading guide for examiners
+
+This submission maps to the rubric as follows:
+
+- **Graph model definition (25%)** — §2, with schema diagram embedded
+- **IFC → graph transformation process (20%)** — §3, with toolchain and 8-stage ETL description
+- **Cypher queries (25%)** — §4, with standalone `.cypher` files in `queries/` (Q1–Q8) and `queries/hvac/` (Q1–Q11)
+- **Interpretation of results (15%)** — §5, with cross-model comparative findings
+- **Documentation clarity (15%)** — repository layout in §6, reproduction steps in §7
+
+CSV exports for every query are in `results/` (Duplex set) and `results/hvac/` (HVAC set). Seven Neo4j screenshots are in `screenshots/`.
+
+§4.1 adds a cross-model validation against an MEP services dataset (NBU MedicalClinic HVAC) and three Services-BIM-specific queries (Q9–Q11). This is beyond the minimum requirements; the eight required queries (Q1–Q8) stand on their own in §4.
+
+### Why two models?
+
+The assignment brief requires one IFC model and eight queries. This submission delivers two models and eleven queries. The reasoning:
+
+- **Professional relevance.** As a practising Services BIM Consultant, validating a data-quality methodology against an architectural model alone would leave the central professional question unanswered: does the approach hold up for the discipline I actually deliver?
+- **Methodological strength.** A single-model analysis cannot distinguish "the model is good" from "my queries don't fire." Running the same eight queries across two contrasting datasets — architectural and MEP — surfaces failure modes that one model alone would hide. Q1 (elements without property sets) inverts between the two datasets: 41 in the Duplex, 0 in the HVAC. A single-model audit would miss exactly this kind of finding.
+- **Risk-managed scope.** The eight required queries (Q1–Q8) against the Duplex Apartment model in §4 stand alone as a complete minimum-requirements submission. The HVAC cross-validation in §4.1 and the three MEP-specific queries (Q9–Q11) are additive, not a replacement.
+
+---
+
 ## 1. Executive summary
 
 This submission demonstrates a complete IFC-to-graph workflow validated against two contrasting buildingSMART-class IFC datasets:
@@ -36,31 +60,31 @@ The graph schema is designed around four principles drawn directly from the lect
 
 ### 2.1 Node labels
 
-| Label | IFC source | Carried properties |
-|---|---|---|
-| `:Project` | `IfcProject` | `GlobalId`, `Name`, `LongName`, `Description` |
-| `:Site` | `IfcSite` | `GlobalId`, `Name`, `LongName`, `Description` |
-| `:Building` | `IfcBuilding` | `GlobalId`, `Name`, `LongName`, `Description` |
-| `:Storey` | `IfcBuildingStorey` | `GlobalId`, `Name`, `LongName`, `Description` |
-| `:Space` | `IfcSpace` | `GlobalId`, `Name`, `LongName`, `Description` |
-| `:Element` (+ secondary `:IfcXxx`) | `IfcElement` and subtypes | `GlobalId`, `IfcClass`, `Name`, `ObjectType`, `Tag`, `Description` |
-| `:Type` | `IfcTypeObject` | `GlobalId`, `IfcClass`, `Name` |
-| `:PropertySet` | `IfcPropertySet` instance | `pset_id`, `Name` |
-| `:Property` | individual property within a Pset | `prop_id`, `Name`, `Value`, `DataType`, `IsEmpty` |
-| `:Material` | `IfcMaterial` | `Name` |
-| `:DistributionPort` *(MEP extension)* | `IfcDistributionPort` | `GlobalId`, `Name`, `FlowDirection` |
+| Label                                 | IFC source                        | Carried properties                                                 |
+| ------------------------------------- | --------------------------------- | ------------------------------------------------------------------ |
+| `:Project`                            | `IfcProject`                      | `GlobalId`, `Name`, `LongName`, `Description`                      |
+| `:Site`                               | `IfcSite`                         | `GlobalId`, `Name`, `LongName`, `Description`                      |
+| `:Building`                           | `IfcBuilding`                     | `GlobalId`, `Name`, `LongName`, `Description`                      |
+| `:Storey`                             | `IfcBuildingStorey`               | `GlobalId`, `Name`, `LongName`, `Description`                      |
+| `:Space`                              | `IfcSpace`                        | `GlobalId`, `Name`, `LongName`, `Description`                      |
+| `:Element` (+ secondary `:IfcXxx`)    | `IfcElement` and subtypes         | `GlobalId`, `IfcClass`, `Name`, `ObjectType`, `Tag`, `Description` |
+| `:Type`                               | `IfcTypeObject`                   | `GlobalId`, `IfcClass`, `Name`                                     |
+| `:PropertySet`                        | `IfcPropertySet` instance         | `pset_id`, `Name`                                                  |
+| `:Property`                           | individual property within a Pset | `prop_id`, `Name`, `Value`, `DataType`, `IsEmpty`                  |
+| `:Material`                           | `IfcMaterial`                     | `Name`                                                             |
+| `:DistributionPort` *(MEP extension)* | `IfcDistributionPort`             | `GlobalId`, `Name`, `FlowDirection`                                |
 
 ### 2.2 Relationship types
 
-| Relationship | Direction | IFC source |
-|---|---|---|
-| `[:CONTAINS]` | spatial parent → child | `IfcRelAggregates`, `IfcRelContainedInSpatialStructure` |
-| `[:HAS_PSET]` | element → property set | `IfcRelDefinesByProperties` |
-| `[:HAS_PROPERTY]` | property set → property | derived from `IfcPropertySet.HasProperties` |
-| `[:DEFINED_BY]` | element → type | `IfcRelDefinesByType` |
-| `[:MADE_OF]` | element → material | `IfcRelAssociatesMaterial` |
-| `[:HAS_PORT]` *(MEP extension)* | element → distribution port | `IfcRelConnectsPortToElement` |
-| `[:CONNECTED_TO]` *(MEP extension)* | distribution port → distribution port | `IfcRelConnectsPorts` |
+| Relationship                        | Direction                             | IFC source                                              |
+| ----------------------------------- | ------------------------------------- | ------------------------------------------------------- |
+| `[:CONTAINS]`                       | spatial parent → child                | `IfcRelAggregates`, `IfcRelContainedInSpatialStructure` |
+| `[:HAS_PSET]`                       | element → property set                | `IfcRelDefinesByProperties`                             |
+| `[:HAS_PROPERTY]`                   | property set → property               | derived from `IfcPropertySet.HasProperties`             |
+| `[:DEFINED_BY]`                     | element → type                        | `IfcRelDefinesByType`                                   |
+| `[:MADE_OF]`                        | element → material                    | `IfcRelAssociatesMaterial`                              |
+| `[:HAS_PORT]` *(MEP extension)*     | element → distribution port           | `IfcRelConnectsPortToElement`                           |
+| `[:CONNECTED_TO]` *(MEP extension)* | distribution port → distribution port | `IfcRelConnectsPorts`                                   |
 
 The `:DistributionPort` node label and the `[:HAS_PORT]` / `[:CONNECTED_TO]` relationships are MEP-specific schema extensions activated automatically by the loader when the source IFC contains `IfcDistributionPort` entities. Architectural-only models incur no cost from this extension; the HVAC model gains a complete system-topology layer.
 
@@ -68,21 +92,21 @@ The `:DistributionPort` node label and the `[:HAS_PORT]` / `[:CONNECTED_TO]` rel
 
 The two databases on the same Neo4j instance:
 
-| Aspect | Duplex (`neo4j` DB) | HVAC (`hvac` DB) |
-|---|---|---|
-| Nodes (total) | 16,178 | 193,689 |
-| Relationships (total) | 16,102 | 200,262 |
-| `:Element` | 268 | 3,704 |
-| `:PropertySet` | 2,388 | 33,053 |
-| `:Property` | 13,455 | 148,447 |
-| `:DistributionPort` | 0 *(n/a)* | 7,390 |
-| `:Storey` | 4 | 4 |
-| `:Space` | 21 | 263 |
-| `:HAS_PROPERTY` | 13,455 | 148,447 |
-| `:HAS_PSET` | 2,215 | 33,053 |
-| `:CONTAINS` | 234 | 3,973 |
-| `:HAS_PORT` *(MEP)* | 0 | 7,390 |
-| `:CONNECTED_TO` *(MEP)* | 0 | 3,695 |
+| Aspect                  | Duplex (`neo4j` DB) | HVAC (`hvac` DB) |
+| ----------------------- | ------------------- | ---------------- |
+| Nodes (total)           | 16,178              | 193,689          |
+| Relationships (total)   | 16,102              | 200,262          |
+| `:Element`              | 268                 | 3,704            |
+| `:PropertySet`          | 2,388               | 33,053           |
+| `:Property`             | 13,455              | 148,447          |
+| `:DistributionPort`     | 0 *(n/a)*           | 7,390            |
+| `:Storey`               | 4                   | 4                |
+| `:Space`                | 21                  | 263              |
+| `:HAS_PROPERTY`         | 13,455              | 148,447          |
+| `:HAS_PSET`             | 2,215               | 33,053           |
+| `:CONTAINS`             | 234                 | 3,973            |
+| `:HAS_PORT` *(MEP)*     | 0                   | 7,390            |
+| `:CONNECTED_TO` *(MEP)* | 0                   | 3,695            |
 
 See `screenshots/00_graph_overview.png` (Duplex schema panel) and `screenshots/03_hvac_database_overview.png` (HVAC schema panel) for the Neo4j-rendered views.
 
@@ -92,14 +116,14 @@ See `screenshots/00_graph_overview.png` (Duplex schema panel) and `screenshots/0
 
 ### 3.1 Toolchain
 
-| Stage | Tool | Version |
-|---|---|---|
-| IFC parsing | `ifcopenshell` | latest pip |
-| Property extraction | `ifcopenshell.util.element.get_psets()` | bundled |
-| Graph database | Neo4j (via Neo4j Desktop 2) | 2026.05.0 |
-| Driver | `neo4j` Python driver | latest pip |
-| Environment | Python 3 venv, Jupyter Notebook | — |
-| Credentials | `.env` via `python-dotenv` | — |
+| Stage               | Tool                                    | Version    |
+| ------------------- | --------------------------------------- | ---------- |
+| IFC parsing         | `ifcopenshell`                          | latest pip |
+| Property extraction | `ifcopenshell.util.element.get_psets()` | bundled    |
+| Graph database      | Neo4j (via Neo4j Desktop 2)             | 2026.05.0  |
+| Driver              | `neo4j` Python driver                   | latest pip |
+| Environment         | Python 3 venv, Jupyter Notebook         | —          |
+| Credentials         | `.env` via `python-dotenv`              | —          |
 
 This is the **Extract → Transform → Load → Query** pipeline exactly as laid out in Session 1 (Slide: *"The ETL pipeline in construction"*), realised in code rather than diagram.
 
@@ -247,14 +271,14 @@ https://tib.eu/data/duraark/BuildingData/01_IFC/NBU_MedicalClinic_ifc.zip
 
 The zip contains five discipline-separated IFC files from the same medical clinic project (architectural, MEP, HVAC, electrical, structural). The HVAC file alone is 27 MB and contains 3,704 services elements across six MEP IFC classes:
 
-| IFC class | Count | Role |
-|---|---|---|
-| IfcFlowFitting | 1,590 | Duct fittings, transitions, elbows |
-| IfcFlowSegment | 1,548 | Duct runs |
-| IfcFlowTerminal | 440 | Air diffusers, grilles, registers |
-| IfcFlowController | 115 | Dampers, VAVs, valves |
-| IfcFlowMovingDevice | 8 | Fans, AHUs |
-| IfcEnergyConversionDevice | 3 | Heat-exchange equipment |
+| IFC class                 | Count | Role                               |
+| ------------------------- | ----- | ---------------------------------- |
+| IfcFlowFitting            | 1,590 | Duct fittings, transitions, elbows |
+| IfcFlowSegment            | 1,548 | Duct runs                          |
+| IfcFlowTerminal           | 440   | Air diffusers, grilles, registers  |
+| IfcFlowController         | 115   | Dampers, VAVs, valves              |
+| IfcFlowMovingDevice       | 8     | Fans, AHUs                         |
+| IfcEnergyConversionDevice | 3     | Heat-exchange equipment            |
 
 The model also contains **7,390 IfcDistributionPort instances** with **3,695 IfcRelConnectsPorts** relationships — that is, every duct end is captured as a port and the port-to-port connections define the actual flow topology of the HVAC system.
 
@@ -330,20 +354,20 @@ ORDER BY SegmentsMissingDiameter DESC
 
 Eleven queries × two models = 22 result sets, summarised below.
 
-| # | Question | Dimension | Duplex (Architectural) | HVAC (Services) |
-|---|---|---|---|---|
-| Q1 | Elements with no property sets | Completeness | **41** (≈15% of 268) | **0** |
-| Q2 | Doors missing FireRating | Completeness (compliance) | **0** | **0** *(no doors in this discipline file)* |
-| Q3 | Elements not in any storey | Consistency (spatial) | **122** (≈46%) | **2,114** (≈57%) |
-| Q4 | Spaces missing name/number | Completeness (identity) | **0** | **0** |
-| Q5 | Properties with empty values | Completeness | **452** (3.4% of 13,455) | **10,729** (7.2% of 148,447) |
-| Q6 | Incompleteness by category | Completeness (agg.) | 15 categories | 6 categories |
-| Q7a | Duplicate GlobalIds | Uniqueness | **0** | **0** |
-| Q7b | Shared Names within class | Uniqueness | **0** | **0** |
-| Q8 | Values outside permitted set | Validity | **62** | **0** *(no FireRating / IsExternal in scope)* |
-| Q9 | Flow terminals missing flow rate | Completeness (MEP) | n/a | **440** (100% of all flow terminals) |
-| Q10 | Flow elements without DistributionSystem | Consistency (MEP) | n/a | **3,704** (100% of flow elements; 0 systems defined) |
-| Q11 | Flow segments missing diameter | Completeness (MEP) | n/a | 2 classes with missing dimensions |
+| #   | Question                                 | Dimension                 | Duplex (Architectural)   | HVAC (Services)                                      |
+| --- | ---------------------------------------- | ------------------------- | ------------------------ | ---------------------------------------------------- |
+| Q1  | Elements with no property sets           | Completeness              | **41** (≈15% of 268)     | **0**                                                |
+| Q2  | Doors missing FireRating                 | Completeness (compliance) | **0**                    | **0** *(no doors in this discipline file)*           |
+| Q3  | Elements not in any storey               | Consistency (spatial)     | **122** (≈46%)           | **2,114** (≈57%)                                     |
+| Q4  | Spaces missing name/number               | Completeness (identity)   | **0**                    | **0**                                                |
+| Q5  | Properties with empty values             | Completeness              | **452** (3.4% of 13,455) | **10,729** (7.2% of 148,447)                         |
+| Q6  | Incompleteness by category               | Completeness (agg.)       | 15 categories            | 6 categories                                         |
+| Q7a | Duplicate GlobalIds                      | Uniqueness                | **0**                    | **0**                                                |
+| Q7b | Shared Names within class                | Uniqueness                | **0**                    | **0**                                                |
+| Q8  | Values outside permitted set             | Validity                  | **62**                   | **0** *(no FireRating / IsExternal in scope)*        |
+| Q9  | Flow terminals missing flow rate         | Completeness (MEP)        | n/a                      | **440** (100% of all flow terminals)                 |
+| Q10 | Flow elements without DistributionSystem | Consistency (MEP)         | n/a                      | **3,704** (100% of flow elements; 0 systems defined) |
+| Q11 | Flow segments missing diameter           | Completeness (MEP)        | n/a                      | 2 classes with missing dimensions                    |
 
 ### 4.1.5 Interpretation
 
@@ -363,19 +387,19 @@ The validity result on Q8 (zero failures) is also informative. The controlled vo
 
 ### 5.1 Combined-model summary
 
-| # | Question | Dimension | Duplex | HVAC |
-|---|---|---|---|---|
-| Q1 | Elements with no property sets | Completeness | 41 | 0 |
-| Q2 | Doors missing FireRating | Completeness (compliance) | 0 | 0 |
-| Q3 | Elements not in any storey | Consistency (spatial) | 122 | 2,114 |
-| Q4 | Spaces missing name/number | Completeness (identity) | 0 | 0 |
-| Q5 | Properties with empty values | Completeness | 452 | 10,729 |
-| Q6 | Incompleteness by category | Completeness (agg.) | 15 ranked | 6 ranked |
-| Q7 | Duplicate identifiers/names | Uniqueness | 0 \| 0 | 0 \| 0 |
-| Q8 | Values outside permitted set | Validity | 62 | 0 |
-| Q9 | Flow terminals missing flow rate | Completeness (MEP) | n/a | 440 |
-| Q10 | Flow elements not in a DistributionSystem | Consistency (MEP) | n/a | 3,704 |
-| Q11 | Flow segments missing diameter | Completeness (MEP) | n/a | 2 classes |
+| #   | Question                                  | Dimension                 | Duplex    | HVAC      |
+| --- | ----------------------------------------- | ------------------------- | --------- | --------- |
+| Q1  | Elements with no property sets            | Completeness              | 41        | 0         |
+| Q2  | Doors missing FireRating                  | Completeness (compliance) | 0         | 0         |
+| Q3  | Elements not in any storey                | Consistency (spatial)     | 122       | 2,114     |
+| Q4  | Spaces missing name/number                | Completeness (identity)   | 0         | 0         |
+| Q5  | Properties with empty values              | Completeness              | 452       | 10,729    |
+| Q6  | Incompleteness by category                | Completeness (agg.)       | 15 ranked | 6 ranked  |
+| Q7  | Duplicate identifiers/names               | Uniqueness                | 0 \| 0    | 0 \| 0    |
+| Q8  | Values outside permitted set              | Validity                  | 62        | 0         |
+| Q9  | Flow terminals missing flow rate          | Completeness (MEP)        | n/a       | 440       |
+| Q10 | Flow elements not in a DistributionSystem | Consistency (MEP)         | n/a       | 3,704     |
+| Q11 | Flow segments missing diameter            | Completeness (MEP)        | n/a       | 2 classes |
 
 ### 5.2 What both models do well
 
@@ -409,7 +433,7 @@ This is the practical justification for treating Services BIM data quality as it
 m7u4-ifc-graph/
 ├── README.md                           ← this document
 ├── LICENSE                             ← MIT
-├── .env.example                        ← template (real .env is gitignored)
+├── env.example                         ← template (real .env is gitignored)
 ├── ifc/
 │   ├── Duplex_A_20110907.ifc           ← architectural source (CC-BY-4.0, buildingSMART)
 │   └── NBU_MedicalClinic_Eng-HVAC.ifc  ← HVAC source (TIB DURAARK, downloaded externally)
@@ -443,7 +467,7 @@ cd m7u4-ifc-graph-duplex
 python -m venv venv
 source venv/Scripts/activate   # Windows Git Bash; use venv/bin/activate on macOS/Linux
 pip install ifcopenshell neo4j pandas python-dotenv jupyter ipykernel
-cp .env.example .env           # then edit with your Neo4j credentials
+cp env.example .env            # then edit with your Neo4j credentials
 ```
 
 The Duplex IFC is included in the repo. The HVAC IFC is not — it is 27 MB and part of a 320 MB academic dataset, redistributable but too large to commit. Download the HVAC source from:
